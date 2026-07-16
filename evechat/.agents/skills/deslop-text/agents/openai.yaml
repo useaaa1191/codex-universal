@@ -1,0 +1,4 @@
+interface:
+  display_name: "Humanize AI Text"
+  short_description: "Strip AI tells, keep the meaning"
+  default_prompt: "Use $deslop-text to humanize AI-sounding writing: cut buzzwords, vary rhythm, and unwind formulaic framing without changing the claims."
