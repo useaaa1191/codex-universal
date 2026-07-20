@@ -39,7 +39,7 @@ Fingerprint for F3 (SHA-256 prefix only): `d9f3d0783d3c`. Length 51. Same finger
 
 ## Operator follow-ups
 
-1. On `Jobs_Applier_AI_Agent_AIHawk`: replace committed `llm_api_key` values with an obvious placeholder and stop tracking `data_folder/secrets.yaml`.
+1. On `Jobs_Applier_AI_Agent_AIHawk`: this cloud token cannot push to that fork (HTTP 403). Locally prepare and push: set `llm_api_key` to `YOUR_LLM_API_KEY_HERE` in `data_folder_example/secrets.yaml`, remove `data_folder/secrets.yaml` from git tracking, add it to `.gitignore`, and rewrite history with `git filter-repo --replace-text` so fingerprint `d9f3d0783d3c` is gone from all commits. Then force-push the cleaned branch.
 2. Enable GitHub secret scanning and push protection for all public `useaaa1191` repositories.
-3. Rotate any personal LLM key that ever matched fingerprint `d9f3d0783d3c` (only if it was issued to LO; otherwise treat as upstream leakage).
+3. Rotate any personal LLM key that ever matched fingerprint `d9f3d0783d3c` (only if it was issued to LO; otherwise treat as upstream leakage on `feder-cr/Jobs_Applier_AI_Agent_AIHawk`).
 4. Keep using `scripts/scan-secrets.sh` (or the CI workflow) before publishing forks that vendor third-party templates.
