@@ -1,0 +1,85 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-ortho-k-consent",
+  "version": "1.0.0",
+  "name": "ortho_k_consent",
+  "title": "Orthokeratology Informed Consent",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "consent"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "consent-forms"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "ok",
+      "text": "Ortho-K",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "ok-body",
+          "text": "Orthokeratology lenses are worn overnight to flatten the cornea and temporarily reduce myopia. Vision during the day without glasses depends on consistent wear. Risks include microbial keratitis, which can cause permanent vision loss, lens binding, hypoxia, and residual refractive error. This is not a substitute for adult refractive surgery counseling. Myopia-control benefit, when discussed, is an off-label use of some designs and is not a guarantee against progression.",
+          "type": "display"
+        },
+        {
+          "linkId": "ok-consent",
+          "text": "I consent to an orthokeratology fit and understand overnight wear risks.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "ok-hygiene",
+          "text": "I will follow cleaning, no-water, and unscheduled-visit instructions.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

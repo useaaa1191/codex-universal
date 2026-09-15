@@ -1,0 +1,110 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-myopia-management-consent",
+  "version": "1.0.0",
+  "name": "myopia_management_consent",
+  "title": "Myopia Management Consent (Atropine / Soft MF / Outdoor Time)",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "consent"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "consent-forms"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "mm",
+      "text": "Myopia management",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "child-age",
+          "text": "Patient age",
+          "type": "string"
+        },
+        {
+          "linkId": "plan",
+          "text": "Plan discussed",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Low-dose atropine"
+            },
+            {
+              "valueString": "Soft dual-focus / MF myopia-control lens"
+            },
+            {
+              "valueString": "Ortho-K"
+            },
+            {
+              "valueString": "Outdoor time ≥2 hours/day"
+            },
+            {
+              "valueString": "Full-time distance correction"
+            },
+            {
+              "valueString": "Follow-up every 6 months"
+            }
+          ],
+          "repeats": true
+        },
+        {
+          "linkId": "mm-body",
+          "text": "Myopia management aims to slow axial elongation. Options include low-dose atropine (often 0.01–0.05%, off-label), dual-focus or extended-depth soft lenses, orthokeratology, and increased outdoor time. None freeze myopia. Side effects of atropine can include light sensitivity, near blur, and allergic conjunctivitis. Regular axial-length or cycloplegic follow-up is required.",
+          "type": "display"
+        },
+        {
+          "linkId": "mm-consent",
+          "text": "I consent to the myopia-management plan discussed today.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

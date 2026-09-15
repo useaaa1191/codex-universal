@@ -1,0 +1,94 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-preferred-pharmacy",
+  "version": "1.0.0",
+  "name": "preferred_pharmacy",
+  "title": "Preferred Pharmacy & eRx",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "intake"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "intake-paperwork"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "rx",
+      "text": "Pharmacy",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "pharmacy-name",
+          "text": "Pharmacy name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "pharmacy-address",
+          "text": "Address / cross streets",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "pharmacy-phone",
+          "text": "Phone",
+          "type": "string"
+        },
+        {
+          "linkId": "pharmacy-ncpdp",
+          "text": "NCPDP / NPI if known",
+          "type": "string"
+        },
+        {
+          "linkId": "mail-order",
+          "text": "Also use a mail-order pharmacy?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "mail-order-name",
+          "text": "Mail-order name",
+          "type": "string"
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

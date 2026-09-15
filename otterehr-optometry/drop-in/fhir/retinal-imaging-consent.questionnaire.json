@@ -1,0 +1,103 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-retinal-imaging-consent",
+  "version": "1.0.0",
+  "name": "retinal_imaging_consent",
+  "title": "Retinal Imaging / Optomap Screening Consent",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "consent"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "consent-forms"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "img",
+      "text": "Retinal screening",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "img-body",
+          "text": "Ultra-widefield or fundus photographs document the retina and can reveal diabetic retinopathy, macular degeneration, glaucoma suspects, moles, holes, and detachments. Screening images do not always replace a dilated exam, especially with flashes, floaters, high myopia, or diabetes. Vision and medical plans usually do not cover screening photos. The posted fee is due today unless the doctor orders photos as a medical procedure.",
+          "type": "display"
+        },
+        {
+          "linkId": "screening-fee",
+          "text": "Posted screening fee",
+          "type": "string"
+        },
+        {
+          "linkId": "imaging-choice",
+          "text": "I choose",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Retinal screening images today (I agree to the posted fee if not covered)"
+            },
+            {
+              "valueString": "Dilation instead of screening images"
+            },
+            {
+              "valueString": "Both dilation and images"
+            },
+            {
+              "valueString": "I decline both and understand the internal exam is limited"
+            }
+          ]
+        },
+        {
+          "linkId": "epilepsy",
+          "text": "History of photosensitive epilepsy?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

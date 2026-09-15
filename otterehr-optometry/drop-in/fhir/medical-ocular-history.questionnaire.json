@@ -1,0 +1,576 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-medical-ocular-history",
+  "version": "1.0.0",
+  "name": "medical_ocular_history",
+  "title": "Medical & Ocular History Questionnaire",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "intake"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "medical-history"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "visit",
+      "text": "Today's visit",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "last-eye-exam",
+          "text": "Last eye exam",
+          "type": "date"
+        },
+        {
+          "linkId": "last-dilation",
+          "text": "Last dilated exam",
+          "type": "date"
+        },
+        {
+          "linkId": "chief-complaint",
+          "text": "What is the main reason for today's visit?",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "symptoms",
+          "text": "Current symptoms",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Blur at distance"
+            },
+            {
+              "valueString": "Blur at near"
+            },
+            {
+              "valueString": "Fluctuating vision"
+            },
+            {
+              "valueString": "Double vision"
+            },
+            {
+              "valueString": "Eye pain"
+            },
+            {
+              "valueString": "Redness"
+            },
+            {
+              "valueString": "Itching"
+            },
+            {
+              "valueString": "Burning / gritty"
+            },
+            {
+              "valueString": "Tearing"
+            },
+            {
+              "valueString": "Discharge"
+            },
+            {
+              "valueString": "Light sensitivity"
+            },
+            {
+              "valueString": "Flashes"
+            },
+            {
+              "valueString": "Floaters"
+            },
+            {
+              "valueString": "Curtain / veil"
+            },
+            {
+              "valueString": "Headache"
+            },
+            {
+              "valueString": "Eye strain"
+            },
+            {
+              "valueString": "Dryness"
+            },
+            {
+              "valueString": "Halos"
+            },
+            {
+              "valueString": "Night driving difficulty"
+            },
+            {
+              "valueString": "Loss of vision"
+            }
+          ],
+          "repeats": true
+        }
+      ]
+    },
+    {
+      "linkId": "correction",
+      "text": "Current correction",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "wears-glasses",
+          "text": "Do you wear glasses?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "glasses-use",
+          "text": "Glasses use",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Full time"
+            },
+            {
+              "valueString": "Distance only"
+            },
+            {
+              "valueString": "Near only"
+            },
+            {
+              "valueString": "Computer / progressives"
+            },
+            {
+              "valueString": "Backup only"
+            },
+            {
+              "valueString": "None"
+            }
+          ]
+        },
+        {
+          "linkId": "wears-cl",
+          "text": "Do you wear contact lenses?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "cl-type",
+          "text": "Contact lens type",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "None"
+            },
+            {
+              "valueString": "Daily soft"
+            },
+            {
+              "valueString": "2-week soft"
+            },
+            {
+              "valueString": "Monthly soft"
+            },
+            {
+              "valueString": "Toric"
+            },
+            {
+              "valueString": "Multifocal"
+            },
+            {
+              "valueString": "RGP / corneal GP"
+            },
+            {
+              "valueString": "Scleral"
+            },
+            {
+              "valueString": "Ortho-K"
+            },
+            {
+              "valueString": "Hybrid"
+            }
+          ]
+        },
+        {
+          "linkId": "cl-brand",
+          "text": "Brand / parameters (if known)",
+          "type": "string"
+        },
+        {
+          "linkId": "cl-solution",
+          "text": "Care system",
+          "type": "string"
+        },
+        {
+          "linkId": "sleep-in-cls",
+          "text": "Do you ever sleep in contact lenses?",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "linkId": "ocular",
+      "text": "Ocular history",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "ocular-hx",
+          "text": "Have you been diagnosed with or treated for",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "None"
+            },
+            {
+              "valueString": "Myopia"
+            },
+            {
+              "valueString": "Hyperopia"
+            },
+            {
+              "valueString": "Astigmatism"
+            },
+            {
+              "valueString": "Presbyopia"
+            },
+            {
+              "valueString": "Amblyopia / lazy eye"
+            },
+            {
+              "valueString": "Strabismus / eye turn"
+            },
+            {
+              "valueString": "Cataract"
+            },
+            {
+              "valueString": "Glaucoma / glaucoma suspect"
+            },
+            {
+              "valueString": "Macular degeneration"
+            },
+            {
+              "valueString": "Diabetic retinopathy"
+            },
+            {
+              "valueString": "Retinal detachment / tear"
+            },
+            {
+              "valueString": "Keratoconus"
+            },
+            {
+              "valueString": "Dry eye disease"
+            },
+            {
+              "valueString": "Uveitis / iritis"
+            },
+            {
+              "valueString": "Eye injury"
+            },
+            {
+              "valueString": "Eye surgery"
+            },
+            {
+              "valueString": "Color vision deficiency"
+            }
+          ],
+          "repeats": true
+        },
+        {
+          "linkId": "ocular-detail",
+          "text": "Details: surgeries, injuries, year, which eye",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "linkId": "systemic",
+      "text": "Medical history",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "systemic-hx",
+          "text": "Systemic conditions",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "None"
+            },
+            {
+              "valueString": "Diabetes type 1"
+            },
+            {
+              "valueString": "Diabetes type 2"
+            },
+            {
+              "valueString": "Hypertension"
+            },
+            {
+              "valueString": "High cholesterol"
+            },
+            {
+              "valueString": "Thyroid disease"
+            },
+            {
+              "valueString": "Autoimmune (RA, lupus, Sjogren)"
+            },
+            {
+              "valueString": "Asthma / COPD"
+            },
+            {
+              "valueString": "Heart disease"
+            },
+            {
+              "valueString": "Stroke / TIA"
+            },
+            {
+              "valueString": "Cancer"
+            },
+            {
+              "valueString": "Migraine"
+            },
+            {
+              "valueString": "Multiple sclerosis"
+            },
+            {
+              "valueString": "Sleep apnea"
+            },
+            {
+              "valueString": "Kidney disease"
+            },
+            {
+              "valueString": "Pregnancy / nursing"
+            },
+            {
+              "valueString": "HIV / immunocompromised"
+            },
+            {
+              "valueString": "Seasonal allergies"
+            }
+          ],
+          "repeats": true
+        },
+        {
+          "linkId": "a1c",
+          "text": "Last A1c / blood sugar (if diabetic)",
+          "type": "string"
+        },
+        {
+          "linkId": "diabetes-dx",
+          "text": "Year diagnosed (diabetes)",
+          "type": "date"
+        },
+        {
+          "linkId": "systemic-detail",
+          "text": "Other medical history",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "linkId": "meds",
+      "text": "Medications, allergies, pharmacy",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "medications",
+          "text": "Current medications (include eye drops)",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "allergies",
+          "text": "Allergies and reactions",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "pharmacy-name",
+          "text": "Preferred pharmacy",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "pharmacy-phone",
+          "text": "Pharmacy phone",
+          "type": "string"
+        },
+        {
+          "linkId": "pharmacy-city",
+          "text": "Pharmacy city / cross street",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "linkId": "family",
+      "text": "Family history",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "family-ocular",
+          "text": "Family eye disease",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "None known"
+            },
+            {
+              "valueString": "Glaucoma"
+            },
+            {
+              "valueString": "Macular degeneration"
+            },
+            {
+              "valueString": "Cataract (early)"
+            },
+            {
+              "valueString": "Retinal detachment"
+            },
+            {
+              "valueString": "Blindness"
+            },
+            {
+              "valueString": "Strabismus / amblyopia"
+            },
+            {
+              "valueString": "Keratoconus"
+            },
+            {
+              "valueString": "Color blindness"
+            }
+          ],
+          "repeats": true
+        },
+        {
+          "linkId": "family-systemic",
+          "text": "Family medical",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "None known"
+            },
+            {
+              "valueString": "Diabetes"
+            },
+            {
+              "valueString": "Hypertension"
+            },
+            {
+              "valueString": "Heart disease"
+            },
+            {
+              "valueString": "Thyroid"
+            },
+            {
+              "valueString": "Cancer"
+            },
+            {
+              "valueString": "Autoimmune"
+            }
+          ],
+          "repeats": true
+        }
+      ]
+    },
+    {
+      "linkId": "social",
+      "text": "Social history",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "tobacco",
+          "text": "Tobacco",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Never"
+            },
+            {
+              "valueString": "Former"
+            },
+            {
+              "valueString": "Current"
+            }
+          ]
+        },
+        {
+          "linkId": "alcohol",
+          "text": "Alcohol",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "None"
+            },
+            {
+              "valueString": "Occasional"
+            },
+            {
+              "valueString": "Daily"
+            },
+            {
+              "valueString": "Prefer not to say"
+            }
+          ]
+        },
+        {
+          "linkId": "pregnant",
+          "text": "Pregnant or nursing?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "hobbies",
+          "text": "Hobbies, sports, occupational eye hazards",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "linkId": "sign",
+      "text": "Attestation",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "hx-accurate",
+          "text": "I certify this history is complete and accurate to the best of my knowledge.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

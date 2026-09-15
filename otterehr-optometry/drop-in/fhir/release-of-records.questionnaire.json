@@ -1,0 +1,149 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-release-of-records",
+  "version": "1.0.0",
+  "name": "release_of_records",
+  "title": "Authorization to Release / Obtain Records",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "admin"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "forms-list"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "who",
+      "text": "Patient",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        }
+      ]
+    },
+    {
+      "linkId": "direction",
+      "text": "Authorization",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "direction",
+          "text": "I authorize this practice to",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Release my records to"
+            },
+            {
+              "valueString": "Obtain my records from"
+            },
+            {
+              "valueString": "Both"
+            }
+          ]
+        },
+        {
+          "linkId": "other-practice",
+          "text": "Name of provider / practice",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "other-phone",
+          "text": "Phone",
+          "type": "string"
+        },
+        {
+          "linkId": "other-fax",
+          "text": "Fax",
+          "type": "string"
+        },
+        {
+          "linkId": "other-address",
+          "text": "Address",
+          "type": "string"
+        },
+        {
+          "linkId": "what",
+          "text": "Records to include",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Complete eye record"
+            },
+            {
+              "valueString": "Last exam only"
+            },
+            {
+              "valueString": "Prescriptions"
+            },
+            {
+              "valueString": "Imaging / OCT / photos"
+            },
+            {
+              "valueString": "Visual fields"
+            },
+            {
+              "valueString": "Lab / letters"
+            }
+          ],
+          "repeats": true
+        },
+        {
+          "linkId": "valid-until",
+          "text": "Valid until (blank = one year)",
+          "type": "date"
+        },
+        {
+          "linkId": "redisclose",
+          "text": "I understand information may be re-disclosed by the recipient and no longer protected by HIPAA if they are not a covered entity.",
+          "type": "boolean"
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

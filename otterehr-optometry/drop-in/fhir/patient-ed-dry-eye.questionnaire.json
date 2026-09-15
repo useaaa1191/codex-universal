@@ -1,0 +1,89 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-patient-ed-dry-eye",
+  "version": "1.0.0",
+  "name": "patient_ed_dry_eye",
+  "title": "Patient Education: Dry Eye",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "education"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "patient-instruction"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "ed",
+      "text": "Your dry-eye plan",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "patient-name",
+          "text": "Patient",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "DOB",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "exam-date",
+          "text": "Exam date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "provider",
+          "text": "Provider",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "license",
+          "text": "License / NPI",
+          "type": "string"
+        },
+        {
+          "linkId": "dry-ed",
+          "text": "Dry eye is a chronic surface problem, not a one-drop cure. Twice-daily warm compresses (8–10 minutes) plus lid hygiene help oil glands. Use preservative-free tears when screens or AC flare symptoms. Point vents away from your face. 20-20-20 blinks. Stop sleeping in contact lenses. Return sooner for increasing redness, light sensitivity, or vision drop.",
+          "type": "display"
+        },
+        {
+          "linkId": "custom",
+          "text": "Your specific plan",
+          "type": "string"
+        },
+        {
+          "linkId": "provider-signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

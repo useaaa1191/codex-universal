@@ -1,0 +1,585 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-contact-lens-followup",
+  "version": "1.0.0",
+  "name": "contact_lens_followup",
+  "title": "Contact Lens Follow-up",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "exam"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "global-template"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "header",
+      "text": "Visit",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "patient-name",
+          "text": "Patient",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "DOB",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "visit-date",
+          "text": "Visit date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "provider",
+          "text": "Provider",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "technician",
+          "text": "Technician",
+          "type": "string"
+        },
+        {
+          "linkId": "visit-type",
+          "text": "Visit type",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Comprehensive new"
+            },
+            {
+              "valueString": "Comprehensive established"
+            },
+            {
+              "valueString": "Intermediate"
+            },
+            {
+              "valueString": "Medical / problem-focused"
+            },
+            {
+              "valueString": "Contact lens"
+            },
+            {
+              "valueString": "Follow-up"
+            },
+            {
+              "valueString": "Urgency"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "fu",
+      "text": "Follow-up",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "wtt",
+          "text": "Average wear time",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "wtt.od",
+              "text": "Average wear time OD",
+              "type": "string"
+            },
+            {
+              "linkId": "wtt.os",
+              "text": "Average wear time OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "sleep-in-lenses",
+          "text": "Sleeping in lenses?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "symptoms",
+          "text": "Comfort / vision complaints",
+          "type": "string"
+        },
+        {
+          "linkId": "va-cl",
+          "text": "VA in habitual CL",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "va-cl.od",
+              "text": "VA in habitual CL OD",
+              "type": "string"
+            },
+            {
+              "linkId": "va-cl.os",
+              "text": "VA in habitual CL OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "or",
+          "text": "Over-refraction",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "or.od",
+              "text": "Over-refraction OD",
+              "type": "string"
+            },
+            {
+              "linkId": "or.os",
+              "text": "Over-refraction OS",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "anterior",
+      "text": "Anterior segment (slit lamp)",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "lids-lashes",
+          "text": "Lids / lashes",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "lids-lashes.od",
+              "text": "Lids / lashes OD",
+              "type": "string"
+            },
+            {
+              "linkId": "lids-lashes.os",
+              "text": "Lids / lashes OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "lacrimal",
+          "text": "Lacrimal / puncta",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "lacrimal.od",
+              "text": "Lacrimal / puncta OD",
+              "type": "string"
+            },
+            {
+              "linkId": "lacrimal.os",
+              "text": "Lacrimal / puncta OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "conjunctiva",
+          "text": "Conjunctiva / sclera",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "conjunctiva.od",
+              "text": "Conjunctiva / sclera OD",
+              "type": "string"
+            },
+            {
+              "linkId": "conjunctiva.os",
+              "text": "Conjunctiva / sclera OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "cornea",
+          "text": "Cornea",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "cornea.od",
+              "text": "Cornea OD",
+              "type": "string"
+            },
+            {
+              "linkId": "cornea.os",
+              "text": "Cornea OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "tear-film",
+          "text": "Tear film / TBUT / staining",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "tear-film.od",
+              "text": "Tear film / TBUT / staining OD",
+              "type": "string"
+            },
+            {
+              "linkId": "tear-film.os",
+              "text": "Tear film / TBUT / staining OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "ac",
+          "text": "Anterior chamber",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "ac.od",
+              "text": "Anterior chamber OD",
+              "type": "string"
+            },
+            {
+              "linkId": "ac.os",
+              "text": "Anterior chamber OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "iris",
+          "text": "Iris / angles (van Herick)",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "iris.od",
+              "text": "Iris / angles (van Herick) OD",
+              "type": "string"
+            },
+            {
+              "linkId": "iris.os",
+              "text": "Iris / angles (van Herick) OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "lens",
+          "text": "Lens",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "lens.od",
+              "text": "Lens OD",
+              "type": "string"
+            },
+            {
+              "linkId": "lens.os",
+              "text": "Lens OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "anterior-vitreous",
+          "text": "Anterior vitreous",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "anterior-vitreous.od",
+              "text": "Anterior vitreous OD",
+              "type": "string"
+            },
+            {
+              "linkId": "anterior-vitreous.os",
+              "text": "Anterior vitreous OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "anterior-notes",
+          "text": "Anterior notes / gonioscopy",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "linkId": "decision",
+      "text": "Rx decision",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "status",
+          "text": "Status",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Final Rx — release"
+            },
+            {
+              "valueString": "Continue trial"
+            },
+            {
+              "valueString": "Change parameters"
+            },
+            {
+              "valueString": "Discontinue CL"
+            }
+          ]
+        },
+        {
+          "linkId": "final-params",
+          "text": "Final parameters",
+          "type": "string"
+        },
+        {
+          "linkId": "diagnoses",
+          "text": "Diagnoses",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Contact lens follow-up"
+            },
+            {
+              "valueString": "Corneal staining"
+            },
+            {
+              "valueString": "GPC"
+            },
+            {
+              "valueString": "Overwear"
+            }
+          ],
+          "repeats": true
+        },
+        {
+          "linkId": "assessment",
+          "text": "Assessment (MDM)",
+          "type": "string"
+        },
+        {
+          "linkId": "plan",
+          "text": "Plan / orders / meds / referrals",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "instructions",
+          "text": "Patient instructions",
+          "type": "string"
+        },
+        {
+          "linkId": "follow-up",
+          "text": "Follow-up",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "PRN / 1 year"
+            },
+            {
+              "valueString": "6 months"
+            },
+            {
+              "valueString": "3 months"
+            },
+            {
+              "valueString": "4–6 weeks"
+            },
+            {
+              "valueString": "1–2 weeks"
+            },
+            {
+              "valueString": "1–2 days"
+            },
+            {
+              "valueString": "Tomorrow AM"
+            },
+            {
+              "valueString": "Return if worse"
+            },
+            {
+              "valueString": "Refer same day"
+            }
+          ]
+        },
+        {
+          "linkId": "spectacle-rx",
+          "text": "Spectacle Rx",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "spectacle-rx.od.sph",
+              "text": "OD sph",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.od.cyl",
+              "text": "OD cyl",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.od.axis",
+              "text": "OD axis",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.od.add",
+              "text": "OD add",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.od.prism",
+              "text": "OD prism",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.od.base",
+              "text": "OD base",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.sph",
+              "text": "OS sph",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.cyl",
+              "text": "OS cyl",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.axis",
+              "text": "OS axis",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.add",
+              "text": "OS add",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.prism",
+              "text": "OS prism",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.base",
+              "text": "OS base",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "contact-rx",
+          "text": "Contact lens Rx (if finalized)",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "contact-rx.od.brand",
+              "text": "OD brand",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.bc",
+              "text": "OD bc",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.diam",
+              "text": "OD diam",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.sph",
+              "text": "OD sph",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.cyl",
+              "text": "OD cyl",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.axis",
+              "text": "OD axis",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.add",
+              "text": "OD add",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.brand",
+              "text": "OS brand",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.bc",
+              "text": "OS bc",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.diam",
+              "text": "OS diam",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.sph",
+              "text": "OS sph",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.cyl",
+              "text": "OS cyl",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.axis",
+              "text": "OS axis",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.add",
+              "text": "OS add",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "provider-signature",
+          "text": "Provider signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-financial-policy",
+  "version": "1.0.0",
+  "name": "financial_policy",
+  "title": "Financial, Cancellation & Materials Policy",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "admin"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "consent-forms"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "policy",
+      "text": "Practice financial policy",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "fin-body",
+          "text": "Copays and known self-pay amounts are due at check-in. We bill vision plans for routine exams and materials when eligible, and medical insurance for disease-related visits. Refraction, contact lens evaluation, retinal screening images, and premium testing may be patient-pay if not a covered benefit. Glasses and contact lens orders require a deposit. Custom products are non-refundable once ordered. Missed appointments or cancellations inside 24 hours may incur a fee. Returned checks and declined cards may incur a processing fee.",
+          "type": "display"
+        },
+        {
+          "linkId": "no-show-fee",
+          "text": "No-show / late-cancel fee",
+          "type": "string"
+        },
+        {
+          "linkId": "cl-eval-fee",
+          "text": "Contact lens evaluation starting fee",
+          "type": "string"
+        },
+        {
+          "linkId": "agree-financial",
+          "text": "I have read and agree to this financial policy.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

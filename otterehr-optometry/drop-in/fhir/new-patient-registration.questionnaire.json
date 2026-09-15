@@ -1,0 +1,580 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-new-patient-registration",
+  "version": "1.0.0",
+  "name": "new_patient_registration",
+  "title": "New Patient Registration",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "intake"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "intake-paperwork"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "patient",
+      "text": "Patient information",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "patient",
+          "text": "Patient",
+          "type": "display"
+        },
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "middle-name",
+          "text": "Middle name",
+          "type": "string"
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "sex",
+          "text": "Sex (insurance)",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Female"
+            },
+            {
+              "valueString": "Male"
+            },
+            {
+              "valueString": "Unknown"
+            }
+          ]
+        },
+        {
+          "linkId": "preferred-name",
+          "text": "Preferred name",
+          "type": "string"
+        },
+        {
+          "linkId": "pronouns",
+          "text": "Pronouns",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "she/her"
+            },
+            {
+              "valueString": "he/him"
+            },
+            {
+              "valueString": "they/them"
+            },
+            {
+              "valueString": "other"
+            },
+            {
+              "valueString": "prefer not to say"
+            }
+          ]
+        },
+        {
+          "linkId": "marital-status",
+          "text": "Marital status",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Single"
+            },
+            {
+              "valueString": "Married"
+            },
+            {
+              "valueString": "Domestic partner"
+            },
+            {
+              "valueString": "Divorced"
+            },
+            {
+              "valueString": "Widowed"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        },
+        {
+          "linkId": "language",
+          "text": "Preferred language",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "English"
+            },
+            {
+              "valueString": "Spanish"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        },
+        {
+          "linkId": "language-other",
+          "text": "If other, specify",
+          "type": "string"
+        },
+        {
+          "linkId": "race",
+          "text": "Race",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "American Indian or Alaska Native"
+            },
+            {
+              "valueString": "Asian"
+            },
+            {
+              "valueString": "Black or African American"
+            },
+            {
+              "valueString": "Native Hawaiian or Other Pacific Islander"
+            },
+            {
+              "valueString": "White"
+            },
+            {
+              "valueString": "Other"
+            },
+            {
+              "valueString": "Prefer not to say"
+            }
+          ]
+        },
+        {
+          "linkId": "ethnicity",
+          "text": "Ethnicity",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Hispanic or Latino"
+            },
+            {
+              "valueString": "Not Hispanic or Latino"
+            },
+            {
+              "valueString": "Prefer not to say"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "address",
+      "text": "Home address",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "address",
+          "text": "Address",
+          "type": "display"
+        },
+        {
+          "linkId": "street",
+          "text": "Street address",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "unit",
+          "text": "Apt / suite",
+          "type": "string"
+        },
+        {
+          "linkId": "city",
+          "text": "City",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "state",
+          "text": "State",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "AL"
+            },
+            {
+              "valueString": "AK"
+            },
+            {
+              "valueString": "AZ"
+            },
+            {
+              "valueString": "AR"
+            },
+            {
+              "valueString": "CA"
+            },
+            {
+              "valueString": "CO"
+            },
+            {
+              "valueString": "CT"
+            },
+            {
+              "valueString": "DE"
+            },
+            {
+              "valueString": "FL"
+            },
+            {
+              "valueString": "GA"
+            },
+            {
+              "valueString": "HI"
+            },
+            {
+              "valueString": "ID"
+            },
+            {
+              "valueString": "IL"
+            },
+            {
+              "valueString": "IN"
+            },
+            {
+              "valueString": "IA"
+            },
+            {
+              "valueString": "KS"
+            },
+            {
+              "valueString": "KY"
+            },
+            {
+              "valueString": "LA"
+            },
+            {
+              "valueString": "ME"
+            },
+            {
+              "valueString": "MD"
+            },
+            {
+              "valueString": "MA"
+            },
+            {
+              "valueString": "MI"
+            },
+            {
+              "valueString": "MN"
+            },
+            {
+              "valueString": "MS"
+            },
+            {
+              "valueString": "MO"
+            },
+            {
+              "valueString": "MT"
+            },
+            {
+              "valueString": "NE"
+            },
+            {
+              "valueString": "NV"
+            },
+            {
+              "valueString": "NH"
+            },
+            {
+              "valueString": "NJ"
+            },
+            {
+              "valueString": "NM"
+            },
+            {
+              "valueString": "NY"
+            },
+            {
+              "valueString": "NC"
+            },
+            {
+              "valueString": "ND"
+            },
+            {
+              "valueString": "OH"
+            },
+            {
+              "valueString": "OK"
+            },
+            {
+              "valueString": "OR"
+            },
+            {
+              "valueString": "PA"
+            },
+            {
+              "valueString": "RI"
+            },
+            {
+              "valueString": "SC"
+            },
+            {
+              "valueString": "SD"
+            },
+            {
+              "valueString": "TN"
+            },
+            {
+              "valueString": "TX"
+            },
+            {
+              "valueString": "UT"
+            },
+            {
+              "valueString": "VT"
+            },
+            {
+              "valueString": "VA"
+            },
+            {
+              "valueString": "WA"
+            },
+            {
+              "valueString": "WV"
+            },
+            {
+              "valueString": "WI"
+            },
+            {
+              "valueString": "WY"
+            },
+            {
+              "valueString": "DC"
+            }
+          ]
+        },
+        {
+          "linkId": "zip",
+          "text": "ZIP",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    {
+      "linkId": "contact",
+      "text": "Contact",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "contact",
+          "text": "Contact",
+          "type": "display"
+        },
+        {
+          "linkId": "mobile",
+          "text": "Mobile phone",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "home-phone",
+          "text": "Home phone",
+          "type": "string"
+        },
+        {
+          "linkId": "email",
+          "text": "Email",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "preferred-contact",
+          "text": "Preferred contact",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Mobile"
+            },
+            {
+              "valueString": "Email"
+            },
+            {
+              "valueString": "Home phone"
+            },
+            {
+              "valueString": "Portal message"
+            }
+          ]
+        },
+        {
+          "linkId": "ok-sms",
+          "text": "OK to text appointment reminders?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "ok-voicemail",
+          "text": "OK to leave voicemail with clinical details?",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "linkId": "emergency",
+      "text": "Emergency contact",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "ec-name",
+          "text": "Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "ec-relationship",
+          "text": "Relationship",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Self"
+            },
+            {
+              "valueString": "Spouse"
+            },
+            {
+              "valueString": "Parent"
+            },
+            {
+              "valueString": "Legal Guardian"
+            },
+            {
+              "valueString": "Child"
+            },
+            {
+              "valueString": "Sibling"
+            },
+            {
+              "valueString": "Power of Attorney"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        },
+        {
+          "linkId": "ec-phone",
+          "text": "Phone",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    {
+      "linkId": "employment",
+      "text": "Employment",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "employer",
+          "text": "Employer",
+          "type": "string"
+        },
+        {
+          "linkId": "occupation",
+          "text": "Occupation / visual demands",
+          "type": "string"
+        },
+        {
+          "linkId": "computer-user",
+          "text": "Prolonged near / computer work?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "driver",
+          "text": "Do you drive?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "night-driver",
+          "text": "Do you drive at night?",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "linkId": "referral",
+      "text": "How did you hear about us?",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "referral-source",
+          "text": "Source",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Insurance directory"
+            },
+            {
+              "valueString": "Google / web search"
+            },
+            {
+              "valueString": "Friend or family"
+            },
+            {
+              "valueString": "Physician referral"
+            },
+            {
+              "valueString": "Walk-by / neighborhood"
+            },
+            {
+              "valueString": "Social media"
+            },
+            {
+              "valueString": "Returning patient"
+            }
+          ],
+          "repeats": true
+        },
+        {
+          "linkId": "referral-detail",
+          "text": "Referring doctor or name",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

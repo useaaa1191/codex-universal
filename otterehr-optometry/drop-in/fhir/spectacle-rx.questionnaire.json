@@ -1,0 +1,201 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-spectacle-rx",
+  "version": "1.0.0",
+  "name": "spectacle_rx",
+  "title": "Spectacle Prescription",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "rx"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "forms-list"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "rx",
+      "text": "Prescription",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "patient-name",
+          "text": "Patient",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "DOB",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "exam-date",
+          "text": "Exam date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "provider",
+          "text": "Provider",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "license",
+          "text": "License / NPI",
+          "type": "string"
+        },
+        {
+          "linkId": "spectacle-rx",
+          "text": "Spectacle Rx",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "spectacle-rx.od.sph",
+              "text": "OD sph",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.od.cyl",
+              "text": "OD cyl",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.od.axis",
+              "text": "OD axis",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.od.add",
+              "text": "OD add",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.od.prism",
+              "text": "OD prism",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.od.base",
+              "text": "OD base",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.sph",
+              "text": "OS sph",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.cyl",
+              "text": "OS cyl",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.axis",
+              "text": "OS axis",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.add",
+              "text": "OS add",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.prism",
+              "text": "OS prism",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.base",
+              "text": "OS base",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "pd-binocular",
+          "text": "PD binocular (mm)",
+          "type": "string"
+        },
+        {
+          "linkId": "pd-od",
+          "text": "PD OD",
+          "type": "string"
+        },
+        {
+          "linkId": "pd-os",
+          "text": "PD OS",
+          "type": "string"
+        },
+        {
+          "linkId": "expiration",
+          "text": "Expires",
+          "type": "string"
+        },
+        {
+          "linkId": "use",
+          "text": "Use",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Full time"
+            },
+            {
+              "valueString": "Distance"
+            },
+            {
+              "valueString": "Near"
+            },
+            {
+              "valueString": "Computer"
+            },
+            {
+              "valueString": "Backup"
+            },
+            {
+              "valueString": "Safety"
+            }
+          ]
+        },
+        {
+          "linkId": "poly",
+          "text": "Polycarbonate / Trivex recommended",
+          "type": "boolean"
+        },
+        {
+          "linkId": "notes",
+          "text": "Notes / AR / photochromic / occupational",
+          "type": "string"
+        },
+        {
+          "linkId": "provider-signature",
+          "text": "Provider signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

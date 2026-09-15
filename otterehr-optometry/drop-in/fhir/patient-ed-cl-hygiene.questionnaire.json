@@ -1,0 +1,89 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-patient-ed-cl-hygiene",
+  "version": "1.0.0",
+  "name": "patient_ed_cl_hygiene",
+  "title": "Patient Education: Contact Lens Hygiene",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "education"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "patient-instruction"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "ed",
+      "text": "Contact lens safety",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "patient-name",
+          "text": "Patient",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "DOB",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "exam-date",
+          "text": "Exam date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "provider",
+          "text": "Provider",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "license",
+          "text": "License / NPI",
+          "type": "string"
+        },
+        {
+          "linkId": "cl-ed",
+          "text": "Wash and dry hands first. Daily disposables: wear once, then throw away. Reusable lenses: rub, rinse, and store in fresh solution; never top off. Replace the case every 3 months. No tap water, no showering or swimming in lenses. Do not sleep in lenses unless your doctor prescribed an approved overnight lens. Red, painful, light-sensitive eye: lenses out, call us the same day. A white spot on the cornea is an emergency.",
+          "type": "display"
+        },
+        {
+          "linkId": "custom",
+          "text": "Your replacement schedule / brand",
+          "type": "string"
+        },
+        {
+          "linkId": "provider-signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

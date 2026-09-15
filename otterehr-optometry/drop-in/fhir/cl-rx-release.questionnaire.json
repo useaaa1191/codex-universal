@@ -1,0 +1,115 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-cl-rx-release",
+  "version": "1.0.0",
+  "name": "cl_rx_release",
+  "title": "Contact Lens Prescription Release",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "admin"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "forms-list"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "release",
+      "text": "Prescription copy",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "exam-date",
+          "text": "Exam date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "rx-expiration",
+          "text": "Rx expiration date",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "parameters",
+          "text": "Final parameters (brand, BC, diam, power, add, cyl/axis, color)",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "copy-provided",
+          "text": "A copy of this contact lens prescription was provided to the patient at the completion of the fitting.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "method",
+          "text": "Provided by",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Printed"
+            },
+            {
+              "valueString": "Portal / email"
+            },
+            {
+              "valueString": "Patient declined a copy (note required)"
+            }
+          ]
+        },
+        {
+          "linkId": "provider-signature",
+          "text": "Provider signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "patient-signature",
+          "text": "Patient acknowledgement",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

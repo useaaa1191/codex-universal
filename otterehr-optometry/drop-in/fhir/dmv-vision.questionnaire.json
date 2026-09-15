@@ -1,0 +1,151 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-dmv-vision",
+  "version": "1.0.0",
+  "name": "dmv_vision",
+  "title": "Driver Licensing / DMV Vision Report",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "admin"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "forms-list"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "dmv",
+      "text": "Vision for driving",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "patient-name",
+          "text": "Patient",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "DOB",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "exam-date",
+          "text": "Exam date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "provider",
+          "text": "Provider",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "license",
+          "text": "License / NPI",
+          "type": "string"
+        },
+        {
+          "linkId": "license-number",
+          "text": "License / ID number",
+          "type": "string"
+        },
+        {
+          "linkId": "bcva",
+          "text": "Best-corrected VA",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "bcva.od",
+              "text": "Best-corrected VA OD",
+              "type": "string"
+            },
+            {
+              "linkId": "bcva.os",
+              "text": "Best-corrected VA OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "field",
+          "text": "Visual field",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "≥120° both eyes"
+            },
+            {
+              "valueString": "Restricted"
+            },
+            {
+              "valueString": "Does not meet standard"
+            }
+          ]
+        },
+        {
+          "linkId": "progressive-lenses-ok",
+          "text": "Progressive / bifocal adapted?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "restrictions",
+          "text": "Recommended restrictions",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "None"
+            },
+            {
+              "valueString": "Corrective lenses required"
+            },
+            {
+              "valueString": "Daylight only"
+            },
+            {
+              "valueString": "No interstate / commercial"
+            },
+            {
+              "valueString": "Does not meet standard — do not certify"
+            }
+          ],
+          "repeats": true
+        },
+        {
+          "linkId": "comments",
+          "text": "Comments",
+          "type": "string"
+        },
+        {
+          "linkId": "provider-signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

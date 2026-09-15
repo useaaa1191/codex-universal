@@ -1,0 +1,112 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-after-visit-summary",
+  "version": "1.0.0",
+  "name": "after_visit_summary",
+  "title": "After-Visit Summary",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "letter"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "patient-instruction"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "avs",
+      "text": "Today's visit",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "patient-name",
+          "text": "Patient",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "DOB",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "exam-date",
+          "text": "Exam date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "provider",
+          "text": "Provider",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "license",
+          "text": "License / NPI",
+          "type": "string"
+        },
+        {
+          "linkId": "plain-findings",
+          "text": "What we found (plain language)",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "do-today",
+          "text": "What you should do",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "drops",
+          "text": "Eye drops / medications",
+          "type": "string"
+        },
+        {
+          "linkId": "glasses-cl",
+          "text": "Glasses / contact lenses",
+          "type": "string"
+        },
+        {
+          "linkId": "follow-up",
+          "text": "Follow-up",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "when-to-call",
+          "text": "Call immediately for",
+          "type": "string"
+        },
+        {
+          "linkId": "provider-signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

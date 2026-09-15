@@ -1,0 +1,187 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-pcp-diabetes-letter",
+  "version": "1.0.0",
+  "name": "pcp_diabetes_letter",
+  "title": "Diabetic Eye Exam Report to PCP",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "letter"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "patient-instruction"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "pcp",
+      "text": "Report",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "pcp-name",
+          "text": "PCP / clinic",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "pcp-fax",
+          "text": "Fax",
+          "type": "string"
+        },
+        {
+          "linkId": "patient-name",
+          "text": "Patient",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "DOB",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "exam-date",
+          "text": "Exam date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "provider",
+          "text": "Provider",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "license",
+          "text": "License / NPI",
+          "type": "string"
+        },
+        {
+          "linkId": "a1c",
+          "text": "A1c reported",
+          "type": "string"
+        },
+        {
+          "linkId": "dilation",
+          "text": "Dilated?",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Yes"
+            },
+            {
+              "valueString": "No — limited"
+            }
+          ]
+        },
+        {
+          "linkId": "dr-od",
+          "text": "OD retinopathy",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "None"
+            },
+            {
+              "valueString": "Mild NPDR"
+            },
+            {
+              "valueString": "Moderate NPDR"
+            },
+            {
+              "valueString": "Severe NPDR"
+            },
+            {
+              "valueString": "PDR"
+            },
+            {
+              "valueString": "Ungradable"
+            }
+          ]
+        },
+        {
+          "linkId": "dr-os",
+          "text": "OS retinopathy",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "None"
+            },
+            {
+              "valueString": "Mild NPDR"
+            },
+            {
+              "valueString": "Moderate NPDR"
+            },
+            {
+              "valueString": "Severe NPDR"
+            },
+            {
+              "valueString": "PDR"
+            },
+            {
+              "valueString": "Ungradable"
+            }
+          ]
+        },
+        {
+          "linkId": "dme",
+          "text": "DME",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "None"
+            },
+            {
+              "valueString": "OD"
+            },
+            {
+              "valueString": "OS"
+            },
+            {
+              "valueString": "OU"
+            }
+          ]
+        },
+        {
+          "linkId": "recommendations",
+          "text": "Recommendations / follow-up",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "provider-signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}
