@@ -1,10 +1,25 @@
 name: Build image
 
+# Only rebuild the universal container image when its build inputs change.
+# Unrelated changes (e.g. app code under subdirectories) must not trigger this
+# heavy multi-arch build, which also depends on the self-hosted `codex-runners`
+# group. The workflow file itself is intentionally excluded so CI-only edits do
+# not enqueue a build that cannot run without those runners.
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - "Dockerfile"
+      - "entrypoint.sh"
+      - "setup_universal.sh"
+      - "verify.sh"
   pull_request:
     branches: [ "main" ]
+    paths:
+      - "Dockerfile"
+      - "entrypoint.sh"
+      - "setup_universal.sh"
+      - "verify.sh"
 
 permissions:
   contents: read
