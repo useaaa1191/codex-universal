@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { ALL_FORMS, getForm } from "./catalog";
+import { DEMO_VISITS } from "./demo-board";
 import { toQuestionnaire, toQuestionnaireResponse, questionnaireUrl } from "./fhir";
 import { missingRequired } from "./storage";
 import { FORM_CATEGORIES } from "./types";
@@ -80,5 +81,15 @@ describe("optometry form catalog", () => {
     const response = toQuestionnaireResponse(hipaa, { "last-name": "Rivera" });
     assert.equal(response.resourceType, "QuestionnaireResponse");
     assert.ok(response.item[0]?.item?.some((item) => item.linkId === "last-name"));
+  });
+
+  it("demo board visits point at real forms", () => {
+    assert.ok(DEMO_VISITS.length >= 5);
+    for (const visit of DEMO_VISITS) {
+      assert.ok(getForm(visit.templateSlug), visit.templateSlug);
+      for (const slug of visit.extraForms) {
+        assert.ok(getForm(slug), slug);
+      }
+    }
   });
 });

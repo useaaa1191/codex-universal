@@ -10,7 +10,8 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test src/lib/*.test.ts src/lib/**/*.test.ts",
-    "export:fhir": "tsx scripts/export-fhir.ts"
+    "export:fhir": "tsx scripts/export-fhir.ts",
+    "pack:zip": "bash scripts/pack-zip.sh"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",

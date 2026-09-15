@@ -11,9 +11,21 @@ export default function HomePage() {
     <AppShell
       title="Practice forms & templates"
       subtitle="Everything an optometry clinic needs to run on Ottehr: patient paperwork, consents, OD/OS charting, Rx pads, referrals, and FHIR drop-ins."
+      actions={
+        <a
+          href="/otterehr-optometry-pack.zip"
+          className="rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground"
+        >
+          Download zip
+        </a>
+      }
     >
       <p className="mb-8 text-sm text-muted-foreground">
-        {ALL_FORMS.length} documents · fill, print, export Questionnaire JSON, then copy{" "}
+        {ALL_FORMS.length} documents · open the{" "}
+        <Link href="/ehr" className="underline">
+          EHR board
+        </Link>{" "}
+        to preview a clinic day, or copy{" "}
         <Link href="/drop-in" className="underline">
           drop-in config
         </Link>{" "}

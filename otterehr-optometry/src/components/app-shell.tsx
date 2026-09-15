@@ -4,6 +4,7 @@ import { Eye } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV = [
+  { href: "/ehr", label: "EHR board" },
   { href: "/", label: "Library" },
   { href: "/drop-in", label: "Ottehr drop-in" },
   { href: "/codes", label: "CPT / ICD-10" },

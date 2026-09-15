@@ -2,14 +2,14 @@ import type { FormField, FormValues, PracticeForm } from "./types";
 
 const STORAGE_PREFIX = "otterehr-optometry:";
 
-export function storageKey(slug: string): string {
-  return `${STORAGE_PREFIX}${slug}`;
+export function storageKey(slug: string, visitId?: string): string {
+  return visitId ? `${STORAGE_PREFIX}${visitId}:${slug}` : `${STORAGE_PREFIX}${slug}`;
 }
 
-export function loadValues(slug: string): FormValues {
+export function loadValues(slug: string, visitId?: string): FormValues {
   if (typeof window === "undefined") return {};
   try {
-    const raw = window.localStorage.getItem(storageKey(slug));
+    const raw = window.localStorage.getItem(storageKey(slug, visitId));
     if (!raw) return {};
     const parsed: unknown = JSON.parse(raw);
     if (!parsed || typeof parsed !== "object") return {};
@@ -19,14 +19,14 @@ export function loadValues(slug: string): FormValues {
   }
 }
 
-export function saveValues(slug: string, values: FormValues): void {
+export function saveValues(slug: string, values: FormValues, visitId?: string): void {
   if (typeof window === "undefined") return;
-  window.localStorage.setItem(storageKey(slug), JSON.stringify(values));
+  window.localStorage.setItem(storageKey(slug, visitId), JSON.stringify(values));
 }
 
-export function clearValues(slug: string): void {
+export function clearValues(slug: string, visitId?: string): void {
   if (typeof window === "undefined") return;
-  window.localStorage.removeItem(storageKey(slug));
+  window.localStorage.removeItem(storageKey(slug, visitId));
 }
 
 export function missingRequired(form: PracticeForm, values: FormValues): string[] {

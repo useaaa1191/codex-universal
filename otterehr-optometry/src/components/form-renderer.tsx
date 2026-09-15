@@ -11,13 +11,21 @@ import { clearValues, loadValues, missingRequired, saveValues } from "@/lib/stor
 import type { FormField, FormValue, FormValues, PracticeForm } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
-export function FormRenderer({ form }: { form: PracticeForm }) {
+export function FormRenderer({
+  form,
+  visitId,
+  initialValues,
+}: {
+  form: PracticeForm;
+  visitId?: string;
+  initialValues?: FormValues;
+}) {
   const [values, setValues] = useState<FormValues>({});
   const [notice, setNotice] = useState<string>("");
 
   useEffect(() => {
-    const stored = loadValues(form.slug);
-    const seeded: FormValues = { ...stored };
+    const stored = loadValues(form.slug, visitId);
+    const seeded: FormValues = { ...initialValues, ...stored };
     for (const section of form.sections) {
       for (const field of section.fields) {
         if (seeded[field.key] === undefined && field.defaultValue !== undefined) {
@@ -26,12 +34,14 @@ export function FormRenderer({ form }: { form: PracticeForm }) {
       }
     }
     setValues(seeded);
-  }, [form]);
+    // Seed from the visit once per form/visit; parent memoizes initialValues.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [form.slug, visitId]);
 
   function setField(key: string, value: FormValue) {
     setValues((current) => {
       const next = { ...current, [key]: value };
-      saveValues(form.slug, next);
+      saveValues(form.slug, next, visitId);
       return next;
     });
   }
@@ -42,15 +52,15 @@ export function FormRenderer({ form }: { form: PracticeForm }) {
     if (!form.wnlDefaults) return;
     setValues((current) => {
       const next = { ...current, ...form.wnlDefaults };
-      saveValues(form.slug, next);
+      saveValues(form.slug, next, visitId);
       return next;
     });
     setNotice("WNL defaults applied to empty exam fields.");
   }
 
   function reset() {
-    clearValues(form.slug);
-    setValues({});
+    clearValues(form.slug, visitId);
+    setValues({ ...initialValues });
     setNotice("Draft cleared.");
   }
 
