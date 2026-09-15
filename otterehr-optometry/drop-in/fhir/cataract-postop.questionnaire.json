@@ -1,0 +1,1032 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-cataract-postop",
+  "version": "1.0.0",
+  "name": "cataract_postop",
+  "title": "Cataract Post-operative Visit",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "exam"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "global-template"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "header",
+      "text": "Visit",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "patient-name",
+          "text": "Patient",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "DOB",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "visit-date",
+          "text": "Visit date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "provider",
+          "text": "Provider",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "technician",
+          "text": "Technician",
+          "type": "string"
+        },
+        {
+          "linkId": "visit-type",
+          "text": "Visit type",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Comprehensive new"
+            },
+            {
+              "valueString": "Comprehensive established"
+            },
+            {
+              "valueString": "Intermediate"
+            },
+            {
+              "valueString": "Medical / problem-focused"
+            },
+            {
+              "valueString": "Contact lens"
+            },
+            {
+              "valueString": "Follow-up"
+            },
+            {
+              "valueString": "Urgency"
+            }
+          ]
+        },
+        {
+          "linkId": "pod",
+          "text": "Visit",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "POD 1"
+            },
+            {
+              "valueString": "POW 1"
+            },
+            {
+              "valueString": "POW 2–3"
+            },
+            {
+              "valueString": "POM 1"
+            },
+            {
+              "valueString": "Later"
+            }
+          ]
+        },
+        {
+          "linkId": "laterality",
+          "text": "Operated eye",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "OD"
+            },
+            {
+              "valueString": "OS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "drops",
+      "text": "Drop adherence",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "drops",
+          "text": "Drops",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Antibiotic"
+            },
+            {
+              "valueString": "Steroid"
+            },
+            {
+              "valueString": "NSAID"
+            },
+            {
+              "valueString": "IOP drop"
+            },
+            {
+              "valueString": "Other"
+            }
+          ],
+          "repeats": true
+        },
+        {
+          "linkId": "symptoms",
+          "text": "Pain / flashes / floaters / vision",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "linkId": "entrance",
+      "text": "Entrance testing",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "visual-acuity",
+          "text": "Visual acuity",
+          "type": "display"
+        },
+        {
+          "linkId": "va-sc-dist",
+          "text": "DVA sc",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "va-sc-dist.od",
+              "text": "DVA sc OD",
+              "type": "string"
+            },
+            {
+              "linkId": "va-sc-dist.os",
+              "text": "DVA sc OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "va-cc-dist",
+          "text": "DVA cc",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "va-cc-dist.od",
+              "text": "DVA cc OD",
+              "type": "string"
+            },
+            {
+              "linkId": "va-cc-dist.os",
+              "text": "DVA cc OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "va-ph",
+          "text": "Pinhole",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "va-ph.od",
+              "text": "Pinhole OD",
+              "type": "string"
+            },
+            {
+              "linkId": "va-ph.os",
+              "text": "Pinhole OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "va-near",
+          "text": "Near",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "va-near.od",
+              "text": "Near OD",
+              "type": "string"
+            },
+            {
+              "linkId": "va-near.os",
+              "text": "Near OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "pupils-motility-fields",
+          "text": "Pupils / motility / fields",
+          "type": "display"
+        },
+        {
+          "linkId": "pupils",
+          "text": "Pupils",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "pupils.od",
+              "text": "Pupils OD",
+              "type": "string"
+            },
+            {
+              "linkId": "pupils.os",
+              "text": "Pupils OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "apd",
+          "text": "APD",
+          "type": "string"
+        },
+        {
+          "linkId": "eoms",
+          "text": "EOMs",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "eoms.od",
+              "text": "EOMs OD",
+              "type": "string"
+            },
+            {
+              "linkId": "eoms.os",
+              "text": "EOMs OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "cvf",
+          "text": "Confrontation fields",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "cvf.od",
+              "text": "Confrontation fields OD",
+              "type": "string"
+            },
+            {
+              "linkId": "cvf.os",
+              "text": "Confrontation fields OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "cover",
+          "text": "Cover test (dist/near)",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "cover.od",
+              "text": "Cover test (dist/near) OD",
+              "type": "string"
+            },
+            {
+              "linkId": "cover.os",
+              "text": "Cover test (dist/near) OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "stereo",
+          "text": "Stereo / NPC / NPC recovery",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "stereo.od",
+              "text": "Stereo / NPC / NPC recovery OD",
+              "type": "string"
+            },
+            {
+              "linkId": "stereo.os",
+              "text": "Stereo / NPC / NPC recovery OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "color",
+          "text": "Color (Ishihara plates)",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "color.od",
+              "text": "Color (Ishihara plates) OD",
+              "type": "string"
+            },
+            {
+              "linkId": "color.os",
+              "text": "Color (Ishihara plates) OS",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "iop",
+      "text": "Intraocular pressure",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "iop-method",
+          "text": "Method",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "NCT"
+            },
+            {
+              "valueString": "iCare"
+            },
+            {
+              "valueString": "Goldmann"
+            },
+            {
+              "valueString": "Tonopen"
+            },
+            {
+              "valueString": "Perkins"
+            },
+            {
+              "valueString": "Not performed"
+            }
+          ]
+        },
+        {
+          "linkId": "iop",
+          "text": "IOP (mmHg)",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "iop.od",
+              "text": "IOP (mmHg) OD",
+              "type": "string"
+            },
+            {
+              "linkId": "iop.os",
+              "text": "IOP (mmHg) OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "iop-time",
+          "text": "Time",
+          "type": "string"
+        },
+        {
+          "linkId": "pachy-od",
+          "text": "Pachymetry OD (µm)",
+          "type": "string"
+        },
+        {
+          "linkId": "pachy-os",
+          "text": "Pachymetry OS (µm)",
+          "type": "string"
+        },
+        {
+          "linkId": "cct-corrected-target",
+          "text": "Target / corrected notes",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "cct-corrected-target.od",
+              "text": "Target / corrected notes OD",
+              "type": "string"
+            },
+            {
+              "linkId": "cct-corrected-target.os",
+              "text": "Target / corrected notes OS",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "anterior",
+      "text": "Anterior segment (slit lamp)",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "lids-lashes",
+          "text": "Lids / lashes",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "lids-lashes.od",
+              "text": "Lids / lashes OD",
+              "type": "string"
+            },
+            {
+              "linkId": "lids-lashes.os",
+              "text": "Lids / lashes OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "lacrimal",
+          "text": "Lacrimal / puncta",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "lacrimal.od",
+              "text": "Lacrimal / puncta OD",
+              "type": "string"
+            },
+            {
+              "linkId": "lacrimal.os",
+              "text": "Lacrimal / puncta OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "conjunctiva",
+          "text": "Conjunctiva / sclera",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "conjunctiva.od",
+              "text": "Conjunctiva / sclera OD",
+              "type": "string"
+            },
+            {
+              "linkId": "conjunctiva.os",
+              "text": "Conjunctiva / sclera OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "cornea",
+          "text": "Cornea",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "cornea.od",
+              "text": "Cornea OD",
+              "type": "string"
+            },
+            {
+              "linkId": "cornea.os",
+              "text": "Cornea OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "tear-film",
+          "text": "Tear film / TBUT / staining",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "tear-film.od",
+              "text": "Tear film / TBUT / staining OD",
+              "type": "string"
+            },
+            {
+              "linkId": "tear-film.os",
+              "text": "Tear film / TBUT / staining OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "ac",
+          "text": "Anterior chamber",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "ac.od",
+              "text": "Anterior chamber OD",
+              "type": "string"
+            },
+            {
+              "linkId": "ac.os",
+              "text": "Anterior chamber OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "iris",
+          "text": "Iris / angles (van Herick)",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "iris.od",
+              "text": "Iris / angles (van Herick) OD",
+              "type": "string"
+            },
+            {
+              "linkId": "iris.os",
+              "text": "Iris / angles (van Herick) OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "lens",
+          "text": "Lens",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "lens.od",
+              "text": "Lens OD",
+              "type": "string"
+            },
+            {
+              "linkId": "lens.os",
+              "text": "Lens OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "anterior-vitreous",
+          "text": "Anterior vitreous",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "anterior-vitreous.od",
+              "text": "Anterior vitreous OD",
+              "type": "string"
+            },
+            {
+              "linkId": "anterior-vitreous.os",
+              "text": "Anterior vitreous OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "anterior-notes",
+          "text": "Anterior notes / gonioscopy",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "linkId": "posterior",
+      "text": "Posterior segment",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "dilation",
+          "text": "Dilation",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Dilated — tropicamide 1%"
+            },
+            {
+              "valueString": "Dilated — trop + PE 2.5%"
+            },
+            {
+              "valueString": "Not dilated"
+            },
+            {
+              "valueString": "Deferred"
+            },
+            {
+              "valueString": "Patient declined"
+            }
+          ]
+        },
+        {
+          "linkId": "dilation-time",
+          "text": "Drops / time",
+          "type": "string"
+        },
+        {
+          "linkId": "view-method",
+          "text": "View",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "90D"
+            },
+            {
+              "valueString": "78D"
+            },
+            {
+              "valueString": "BIO 20D"
+            },
+            {
+              "valueString": "BIO 28D"
+            },
+            {
+              "valueString": "Direct"
+            },
+            {
+              "valueString": "Optomap only"
+            },
+            {
+              "valueString": "Not viewed"
+            }
+          ]
+        },
+        {
+          "linkId": "vitreous",
+          "text": "Vitreous",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "vitreous.od",
+              "text": "Vitreous OD",
+              "type": "string"
+            },
+            {
+              "linkId": "vitreous.os",
+              "text": "Vitreous OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "cd-ratio",
+          "text": "C/D",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "cd-ratio.od",
+              "text": "C/D OD",
+              "type": "string"
+            },
+            {
+              "linkId": "cd-ratio.os",
+              "text": "C/D OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "onh",
+          "text": "Optic nerve (color, rims, NFL, PPA)",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "onh.od",
+              "text": "Optic nerve (color, rims, NFL, PPA) OD",
+              "type": "string"
+            },
+            {
+              "linkId": "onh.os",
+              "text": "Optic nerve (color, rims, NFL, PPA) OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "macula",
+          "text": "Macula",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "macula.od",
+              "text": "Macula OD",
+              "type": "string"
+            },
+            {
+              "linkId": "macula.os",
+              "text": "Macula OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "vessels",
+          "text": "Vessels",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "vessels.od",
+              "text": "Vessels OD",
+              "type": "string"
+            },
+            {
+              "linkId": "vessels.os",
+              "text": "Vessels OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "post-pole",
+          "text": "Posterior pole",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "post-pole.od",
+              "text": "Posterior pole OD",
+              "type": "string"
+            },
+            {
+              "linkId": "post-pole.os",
+              "text": "Posterior pole OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "periphery",
+          "text": "Periphery",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "periphery.od",
+              "text": "Periphery OD",
+              "type": "string"
+            },
+            {
+              "linkId": "periphery.os",
+              "text": "Periphery OS",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "posterior-notes",
+          "text": "Fundus notes / holes / lattice / nevus map",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "linkId": "ap",
+      "text": "Assessment & plan",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "diagnoses",
+          "text": "Diagnoses",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Normal post-op"
+            },
+            {
+              "valueString": "IOP spike"
+            },
+            {
+              "valueString": "Corneal edema"
+            },
+            {
+              "valueString": "Iritis"
+            },
+            {
+              "valueString": "PCO"
+            },
+            {
+              "valueString": "CME"
+            },
+            {
+              "valueString": "Refer back to surgeon"
+            }
+          ],
+          "repeats": true
+        },
+        {
+          "linkId": "assessment",
+          "text": "Assessment (MDM)",
+          "type": "string"
+        },
+        {
+          "linkId": "plan",
+          "text": "Plan / orders / meds / referrals",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "instructions",
+          "text": "Patient instructions",
+          "type": "string"
+        },
+        {
+          "linkId": "follow-up",
+          "text": "Follow-up",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "PRN / 1 year"
+            },
+            {
+              "valueString": "6 months"
+            },
+            {
+              "valueString": "3 months"
+            },
+            {
+              "valueString": "4–6 weeks"
+            },
+            {
+              "valueString": "1–2 weeks"
+            },
+            {
+              "valueString": "1–2 days"
+            },
+            {
+              "valueString": "Tomorrow AM"
+            },
+            {
+              "valueString": "Return if worse"
+            },
+            {
+              "valueString": "Refer same day"
+            }
+          ]
+        },
+        {
+          "linkId": "spectacle-rx",
+          "text": "Spectacle Rx",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "spectacle-rx.od.sph",
+              "text": "OD sph",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.od.cyl",
+              "text": "OD cyl",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.od.axis",
+              "text": "OD axis",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.od.add",
+              "text": "OD add",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.od.prism",
+              "text": "OD prism",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.od.base",
+              "text": "OD base",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.sph",
+              "text": "OS sph",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.cyl",
+              "text": "OS cyl",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.axis",
+              "text": "OS axis",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.add",
+              "text": "OS add",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.prism",
+              "text": "OS prism",
+              "type": "string"
+            },
+            {
+              "linkId": "spectacle-rx.os.base",
+              "text": "OS base",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "contact-rx",
+          "text": "Contact lens Rx (if finalized)",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "contact-rx.od.brand",
+              "text": "OD brand",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.bc",
+              "text": "OD bc",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.diam",
+              "text": "OD diam",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.sph",
+              "text": "OD sph",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.cyl",
+              "text": "OD cyl",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.axis",
+              "text": "OD axis",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.add",
+              "text": "OD add",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.brand",
+              "text": "OS brand",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.bc",
+              "text": "OS bc",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.diam",
+              "text": "OS diam",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.sph",
+              "text": "OS sph",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.cyl",
+              "text": "OS cyl",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.axis",
+              "text": "OS axis",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.add",
+              "text": "OS add",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "provider-signature",
+          "text": "Provider signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date"
+        }
+      ]
+    }
+  ]
+}

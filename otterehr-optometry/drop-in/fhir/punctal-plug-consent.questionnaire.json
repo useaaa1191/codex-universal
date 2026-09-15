@@ -1,0 +1,122 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-punctal-plug-consent",
+  "version": "1.0.0",
+  "name": "punctal_plug_consent",
+  "title": "Punctal Plug Insertion Consent",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "procedure"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "procedure"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "plug",
+      "text": "Punctal occlusion",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "plug-type",
+          "text": "Plug type",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Temporary collagen"
+            },
+            {
+              "valueString": "Extended dissolvable"
+            },
+            {
+              "valueString": "Permanent silicone"
+            }
+          ]
+        },
+        {
+          "linkId": "sites",
+          "text": "Sites",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Lower OD"
+            },
+            {
+              "valueString": "Lower OS"
+            },
+            {
+              "valueString": "Upper OD"
+            },
+            {
+              "valueString": "Upper OS"
+            },
+            {
+              "valueString": "Both lower"
+            },
+            {
+              "valueString": "All four"
+            }
+          ]
+        },
+        {
+          "linkId": "plug-body",
+          "text": "Punctal plugs slow tear drainage to treat dry eye. Temporary plugs dissolve. Silicone plugs remain until removed. Risks include watering, irritation, infection, plug loss or migration into the canaliculus, and rarely granuloma. I can request removal.",
+          "type": "display"
+        },
+        {
+          "linkId": "plug-consent",
+          "text": "I consent to punctal plug placement as planned.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

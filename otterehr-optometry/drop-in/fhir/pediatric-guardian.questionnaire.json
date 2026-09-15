@@ -1,0 +1,128 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-pediatric-guardian",
+  "version": "1.0.0",
+  "name": "pediatric_guardian",
+  "title": "Pediatric / Minor Consent & Guardian Authorization",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "consent"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "consent-forms"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "child",
+      "text": "Minor patient",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "child-last",
+          "text": "Child last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "child-first",
+          "text": "Child first name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "child-dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "school",
+          "text": "School / grade",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "linkId": "guardian",
+      "text": "Parent or legal guardian",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "guardian-name",
+          "text": "Guardian name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "guardian-rel",
+          "text": "Relationship",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Parent"
+            },
+            {
+              "valueString": "Legal Guardian"
+            },
+            {
+              "valueString": "Foster parent"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        },
+        {
+          "linkId": "guardian-phone",
+          "text": "Phone",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "other-adults",
+          "text": "Other adults authorized to accompany this child and consent to routine care",
+          "type": "string"
+        },
+        {
+          "linkId": "consent-minor",
+          "text": "I consent to examination, diagnostic drops including dilation, and treatment for this minor.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "polycarb",
+          "text": "I understand polycarbonate or Trivex lenses are strongly recommended for children and monocular patients.",
+          "type": "boolean"
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

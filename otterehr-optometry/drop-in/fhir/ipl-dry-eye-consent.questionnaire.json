@@ -1,0 +1,99 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-ipl-dry-eye-consent",
+  "version": "1.0.0",
+  "name": "ipl_dry_eye_consent",
+  "title": "IPL / Thermal Pulsation Dry Eye Procedure Consent",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "procedure"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "procedure"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "ipl",
+      "text": "Office dry-eye procedure",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "modality",
+          "text": "Modality",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "IPL"
+            },
+            {
+              "valueString": "Thermal pulsation (LipiFlow / iLux / TearCare)"
+            },
+            {
+              "valueString": "BlephEx"
+            },
+            {
+              "valueString": "Combination"
+            }
+          ]
+        },
+        {
+          "linkId": "ipl-body",
+          "text": "These office procedures treat meibomian gland dysfunction. IPL uses light on the eyelids/face; it is not appropriate for all skin types and requires no recent sunburn, isotretinoin, or photosensitizing medications as screened by the doctor. Multiple sessions are typical. Improvement is not guaranteed. Risks include redness, swelling, pigment change, blistering (rare), and incomplete response.",
+          "type": "display"
+        },
+        {
+          "linkId": "ipl-consent",
+          "text": "I consent to the selected dry-eye procedure(s).",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

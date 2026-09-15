@@ -1,0 +1,107 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-communication-authorization",
+  "version": "1.0.0",
+  "name": "communication_authorization",
+  "title": "Communication & Patient Portal Authorization",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "intake"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "intake-paperwork"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "comm",
+      "text": "How we may contact you",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "email",
+          "text": "Email",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "mobile",
+          "text": "Mobile",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "channels",
+          "text": "Approved channels",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "SMS appointment reminders"
+            },
+            {
+              "valueString": "SMS recall / glasses ready"
+            },
+            {
+              "valueString": "Email recall"
+            },
+            {
+              "valueString": "Patient portal"
+            },
+            {
+              "valueString": "Telephone"
+            }
+          ],
+          "repeats": true
+        },
+        {
+          "linkId": "ok-clinical-sms",
+          "text": "OK to send non-sensitive clinical follow-up by SMS?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "portal-agree",
+          "text": "I agree to use the patient portal for messages when possible.",
+          "type": "boolean"
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

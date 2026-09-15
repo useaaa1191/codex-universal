@@ -1,0 +1,114 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-oct-vf-consent",
+  "version": "1.0.0",
+  "name": "oct_vf_consent",
+  "title": "OCT, Visual Field & Additional Testing Consent",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "consent"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "consent-forms"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "tests",
+      "text": "Testing",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "test-body",
+          "text": "The doctor may recommend OCT of the retina or optic nerve, automated visual fields, corneal topography, pachymetry, fundus photography, or gonioscopy. When ordered for a medical diagnosis these tests are usually billed to medical insurance subject to deductible and copay. Screening versions may be self-pay. You may decline any test.",
+          "type": "display"
+        },
+        {
+          "linkId": "oct-onh",
+          "text": "OCT optic nerve",
+          "type": "boolean"
+        },
+        {
+          "linkId": "oct-retina",
+          "text": "OCT macula / retina",
+          "type": "boolean"
+        },
+        {
+          "linkId": "hvf",
+          "text": "Visual field",
+          "type": "boolean"
+        },
+        {
+          "linkId": "topo",
+          "text": "Corneal topography / tomography",
+          "type": "boolean"
+        },
+        {
+          "linkId": "pachy",
+          "text": "Pachymetry",
+          "type": "boolean"
+        },
+        {
+          "linkId": "gonio",
+          "text": "Gonioscopy",
+          "type": "boolean"
+        },
+        {
+          "linkId": "photos",
+          "text": "Fundus or anterior-segment photos",
+          "type": "boolean"
+        },
+        {
+          "linkId": "agree-tests",
+          "text": "I consent to the tests checked above.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-refraction-waiver",
+  "version": "1.0.0",
+  "name": "refraction_waiver",
+  "title": "Refraction (CPT 92015) Non-Covered Service Notice",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "consent"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "consent-forms"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "ref",
+      "text": "Refraction",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "ref-body",
+          "text": "Refraction (CPT 92015) is the test that determines your glasses prescription. Many medical insurance plans consider it a vision benefit and will not pay it on a medical visit. Your vision plan may cover it as part of a routine exam. If refraction is not covered, the posted fee is your responsibility. You may decline refraction; we then cannot issue or update a spectacle prescription.",
+          "type": "display"
+        },
+        {
+          "linkId": "refraction-fee",
+          "text": "Posted refraction fee",
+          "type": "string"
+        },
+        {
+          "linkId": "refraction-choice",
+          "text": "I choose",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Perform refraction; I will pay if not covered"
+            },
+            {
+              "valueString": "Decline refraction; no glasses Rx today"
+            }
+          ]
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

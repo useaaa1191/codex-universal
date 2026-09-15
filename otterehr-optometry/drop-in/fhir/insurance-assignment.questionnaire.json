@@ -1,0 +1,286 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-insurance-assignment",
+  "version": "1.0.0",
+  "name": "insurance_assignment",
+  "title": "Insurance, Assignment of Benefits & Financial Responsibility",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "intake"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "intake-paperwork"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "who",
+      "text": "Patient",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        }
+      ]
+    },
+    {
+      "linkId": "pay",
+      "text": "How will today's visit be paid?",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "payment-option",
+          "text": "Payment option",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Vision insurance"
+            },
+            {
+              "valueString": "Medical insurance"
+            },
+            {
+              "valueString": "Both vision and medical"
+            },
+            {
+              "valueString": "Self-pay"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "vision",
+      "text": "Vision plan",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "vision-carrier",
+          "text": "Vision carrier (VSP, EyeMed, Spectera, Davis, etc.)",
+          "type": "string"
+        },
+        {
+          "linkId": "vision-member-id",
+          "text": "Member ID",
+          "type": "string"
+        },
+        {
+          "linkId": "vision-group",
+          "text": "Group number",
+          "type": "string"
+        },
+        {
+          "linkId": "vision-effective",
+          "text": "Effective date",
+          "type": "date"
+        },
+        {
+          "linkId": "vision-subscriber-is-patient",
+          "text": "Is the patient the subscriber?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "vision-sub-name",
+          "text": "Subscriber name",
+          "type": "string"
+        },
+        {
+          "linkId": "vision-sub-dob",
+          "text": "Subscriber DOB",
+          "type": "date"
+        },
+        {
+          "linkId": "vision-sub-rel",
+          "text": "Relationship to subscriber",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Self"
+            },
+            {
+              "valueString": "Spouse"
+            },
+            {
+              "valueString": "Parent"
+            },
+            {
+              "valueString": "Legal Guardian"
+            },
+            {
+              "valueString": "Child"
+            },
+            {
+              "valueString": "Sibling"
+            },
+            {
+              "valueString": "Power of Attorney"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "medical",
+      "text": "Medical insurance",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "med-carrier",
+          "text": "Medical carrier",
+          "type": "string"
+        },
+        {
+          "linkId": "med-member-id",
+          "text": "Member ID",
+          "type": "string"
+        },
+        {
+          "linkId": "med-group",
+          "text": "Group number",
+          "type": "string"
+        },
+        {
+          "linkId": "med-payer-id",
+          "text": "Payer ID (if known)",
+          "type": "string"
+        },
+        {
+          "linkId": "med-subscriber-is-patient",
+          "text": "Is the patient the subscriber?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "med-sub-name",
+          "text": "Subscriber name",
+          "type": "string"
+        },
+        {
+          "linkId": "med-sub-dob",
+          "text": "Subscriber DOB",
+          "type": "date"
+        },
+        {
+          "linkId": "med-sub-rel",
+          "text": "Relationship to subscriber",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Self"
+            },
+            {
+              "valueString": "Spouse"
+            },
+            {
+              "valueString": "Parent"
+            },
+            {
+              "valueString": "Legal Guardian"
+            },
+            {
+              "valueString": "Child"
+            },
+            {
+              "valueString": "Sibling"
+            },
+            {
+              "valueString": "Power of Attorney"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        },
+        {
+          "linkId": "med-pcp",
+          "text": "Primary care physician",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "linkId": "secondary",
+      "text": "Secondary / other coverage",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "has-secondary",
+          "text": "Secondary medical coverage?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "sec-carrier",
+          "text": "Secondary carrier",
+          "type": "string"
+        },
+        {
+          "linkId": "sec-member-id",
+          "text": "Member ID",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "linkId": "legal",
+      "text": "Assignment and responsibility",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "aob-text",
+          "text": "I authorize this practice to release information required to process insurance claims and I assign payable benefits to the practice. I understand that vision plans typically cover a refraction and materials benefit while medical insurance covers disease-related eye care. I am responsible for copays, deductibles, non-covered services (including refraction when not a plan benefit), and amounts my plan does not pay.",
+          "type": "display"
+        },
+        {
+          "linkId": "aob-agree",
+          "text": "I agree to assignment of benefits and financial responsibility.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

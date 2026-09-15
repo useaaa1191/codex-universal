@@ -1,0 +1,326 @@
+[
+  {
+    "slug": "new-patient-registration",
+    "title": "New Patient Registration",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-new-patient-registration",
+    "slot": "intake-paperwork"
+  },
+  {
+    "slug": "insurance-assignment",
+    "title": "Insurance, Assignment of Benefits & Financial Responsibility",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-insurance-assignment",
+    "slot": "intake-paperwork"
+  },
+  {
+    "slug": "medical-ocular-history",
+    "title": "Medical & Ocular History Questionnaire",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-medical-ocular-history",
+    "slot": "medical-history"
+  },
+  {
+    "slug": "hipaa-npp",
+    "title": "HIPAA Notice of Privacy Practices Acknowledgement",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-hipaa-npp",
+    "slot": "consent-forms"
+  },
+  {
+    "slug": "consent-to-treat",
+    "title": "Consent to Examine, Treat & Guarantee of Payment",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-consent-to-treat",
+    "slot": "consent-forms"
+  },
+  {
+    "slug": "financial-policy",
+    "title": "Financial, Cancellation & Materials Policy",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-financial-policy",
+    "slot": "consent-forms"
+  },
+  {
+    "slug": "communication-authorization",
+    "title": "Communication & Patient Portal Authorization",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-communication-authorization",
+    "slot": "intake-paperwork"
+  },
+  {
+    "slug": "release-of-records",
+    "title": "Authorization to Release / Obtain Records",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-release-of-records",
+    "slot": "forms-list"
+  },
+  {
+    "slug": "pediatric-guardian",
+    "title": "Pediatric / Minor Consent & Guardian Authorization",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-pediatric-guardian",
+    "slot": "consent-forms"
+  },
+  {
+    "slug": "photo-consent",
+    "title": "Photography, Imaging & Education Consent",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-photo-consent",
+    "slot": "consent-forms"
+  },
+  {
+    "slug": "preferred-pharmacy",
+    "title": "Preferred Pharmacy & eRx",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-preferred-pharmacy",
+    "slot": "intake-paperwork"
+  },
+  {
+    "slug": "telehealth-consent",
+    "title": "Telehealth Consent",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-telehealth-consent",
+    "slot": "consent-forms"
+  },
+  {
+    "slug": "dilation-consent",
+    "title": "Dilated Fundus Examination Consent",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-dilation-consent",
+    "slot": "consent-forms"
+  },
+  {
+    "slug": "retinal-imaging-consent",
+    "title": "Retinal Imaging / Optomap Screening Consent",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-retinal-imaging-consent",
+    "slot": "consent-forms"
+  },
+  {
+    "slug": "refraction-waiver",
+    "title": "Refraction (CPT 92015) Non-Covered Service Notice",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-refraction-waiver",
+    "slot": "consent-forms"
+  },
+  {
+    "slug": "contact-lens-agreement",
+    "title": "Contact Lens Evaluation, Fitting & Follow-up Agreement",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-contact-lens-agreement",
+    "slot": "consent-forms"
+  },
+  {
+    "slug": "cl-rx-release",
+    "title": "Contact Lens Prescription Release",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-cl-rx-release",
+    "slot": "forms-list"
+  },
+  {
+    "slug": "oct-vf-consent",
+    "title": "OCT, Visual Field & Additional Testing Consent",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-oct-vf-consent",
+    "slot": "consent-forms"
+  },
+  {
+    "slug": "foreign-body-consent",
+    "title": "Corneal / Conjunctival Foreign Body Removal Consent",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-foreign-body-consent",
+    "slot": "procedure"
+  },
+  {
+    "slug": "punctal-plug-consent",
+    "title": "Punctal Plug Insertion Consent",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-punctal-plug-consent",
+    "slot": "procedure"
+  },
+  {
+    "slug": "amniotic-membrane-consent",
+    "title": "Amniotic Membrane Placement Consent",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-amniotic-membrane-consent",
+    "slot": "procedure"
+  },
+  {
+    "slug": "ipl-dry-eye-consent",
+    "title": "IPL / Thermal Pulsation Dry Eye Procedure Consent",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-ipl-dry-eye-consent",
+    "slot": "procedure"
+  },
+  {
+    "slug": "ortho-k-consent",
+    "title": "Orthokeratology Informed Consent",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-ortho-k-consent",
+    "slot": "consent-forms"
+  },
+  {
+    "slug": "myopia-management-consent",
+    "title": "Myopia Management Consent (Atropine / Soft MF / Outdoor Time)",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-myopia-management-consent",
+    "slot": "consent-forms"
+  },
+  {
+    "slug": "comprehensive-exam",
+    "title": "Comprehensive Adult Eye Examination",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-comprehensive-exam",
+    "slot": "global-template"
+  },
+  {
+    "slug": "intermediate-exam",
+    "title": "Intermediate Eye Examination",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-intermediate-exam",
+    "slot": "global-template"
+  },
+  {
+    "slug": "problem-focused",
+    "title": "Problem-Focused Medical Visit (E/M)",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-problem-focused",
+    "slot": "global-template"
+  },
+  {
+    "slug": "contact-lens-new-fit",
+    "title": "Contact Lens New Fit",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-contact-lens-new-fit",
+    "slot": "global-template"
+  },
+  {
+    "slug": "contact-lens-followup",
+    "title": "Contact Lens Follow-up",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-contact-lens-followup",
+    "slot": "global-template"
+  },
+  {
+    "slug": "pediatric-exam",
+    "title": "Pediatric Eye Examination",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-pediatric-exam",
+    "slot": "global-template"
+  },
+  {
+    "slug": "dry-eye-eval",
+    "title": "Dry Eye / OSD Evaluation",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-dry-eye-eval",
+    "slot": "global-template"
+  },
+  {
+    "slug": "glaucoma-followup",
+    "title": "Glaucoma / Suspect Follow-up",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-glaucoma-followup",
+    "slot": "global-template"
+  },
+  {
+    "slug": "diabetic-exam",
+    "title": "Diabetic Eye Examination",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-diabetic-exam",
+    "slot": "global-template"
+  },
+  {
+    "slug": "amd-followup",
+    "title": "Macular Degeneration Follow-up",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-amd-followup",
+    "slot": "global-template"
+  },
+  {
+    "slug": "red-eye-urgent",
+    "title": "Red Eye / Urgent Visit",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-red-eye-urgent",
+    "slot": "global-template"
+  },
+  {
+    "slug": "cataract-preop",
+    "title": "Cataract Pre-operative Evaluation",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-cataract-preop",
+    "slot": "global-template"
+  },
+  {
+    "slug": "cataract-postop",
+    "title": "Cataract Post-operative Visit",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-cataract-postop",
+    "slot": "global-template"
+  },
+  {
+    "slug": "binocular-vision",
+    "title": "Binocular Vision / Vision Therapy Evaluation",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-binocular-vision",
+    "slot": "global-template"
+  },
+  {
+    "slug": "low-vision",
+    "title": "Low Vision Evaluation",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-low-vision",
+    "slot": "global-template"
+  },
+  {
+    "slug": "sports-vision",
+    "title": "Sports / Occupational Vision",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-sports-vision",
+    "slot": "global-template"
+  },
+  {
+    "slug": "emergency-trauma",
+    "title": "Ocular Trauma / Emergency",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-emergency-trauma",
+    "slot": "global-template"
+  },
+  {
+    "slug": "spectacle-rx",
+    "title": "Spectacle Prescription",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-spectacle-rx",
+    "slot": "forms-list"
+  },
+  {
+    "slug": "contact-lens-rx",
+    "title": "Contact Lens Prescription",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-contact-lens-rx",
+    "slot": "forms-list"
+  },
+  {
+    "slug": "ophthalmology-referral",
+    "title": "Referral to Ophthalmology / Retina / Cornea / Glaucoma",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-ophthalmology-referral",
+    "slot": "patient-instruction"
+  },
+  {
+    "slug": "pcp-diabetes-letter",
+    "title": "Diabetic Eye Exam Report to PCP",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-pcp-diabetes-letter",
+    "slot": "patient-instruction"
+  },
+  {
+    "slug": "work-school-excuse",
+    "title": "Work / School Excuse",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-work-school-excuse",
+    "slot": "forms-list"
+  },
+  {
+    "slug": "dmv-vision",
+    "title": "Driver Licensing / DMV Vision Report",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-dmv-vision",
+    "slot": "forms-list"
+  },
+  {
+    "slug": "after-visit-summary",
+    "title": "After-Visit Summary",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-after-visit-summary",
+    "slot": "patient-instruction"
+  },
+  {
+    "slug": "school-vision-screening",
+    "title": "School Vision Screening Report",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-school-vision-screening",
+    "slot": "forms-list"
+  },
+  {
+    "slug": "patient-ed-dry-eye",
+    "title": "Patient Education: Dry Eye",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-patient-ed-dry-eye",
+    "slot": "patient-instruction"
+  },
+  {
+    "slug": "patient-ed-glaucoma",
+    "title": "Patient Education: Glaucoma",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-patient-ed-glaucoma",
+    "slot": "patient-instruction"
+  },
+  {
+    "slug": "patient-ed-amd",
+    "title": "Patient Education: Macular Degeneration",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-patient-ed-amd",
+    "slot": "patient-instruction"
+  },
+  {
+    "slug": "patient-ed-diabetes",
+    "title": "Patient Education: Diabetes and the Eyes",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-patient-ed-diabetes",
+    "slot": "patient-instruction"
+  },
+  {
+    "slug": "patient-ed-cl-hygiene",
+    "title": "Patient Education: Contact Lens Hygiene",
+    "url": "https://fhir.ottehr.com/Questionnaire/optometry-patient-ed-cl-hygiene",
+    "slot": "patient-instruction"
+  }
+]

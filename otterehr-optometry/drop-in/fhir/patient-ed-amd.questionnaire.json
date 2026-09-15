@@ -1,0 +1,89 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-patient-ed-amd",
+  "version": "1.0.0",
+  "name": "patient_ed_amd",
+  "title": "Patient Education: Macular Degeneration",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "education"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "patient-instruction"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "ed",
+      "text": "AMD education",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "patient-name",
+          "text": "Patient",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "DOB",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "exam-date",
+          "text": "Exam date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "provider",
+          "text": "Provider",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "license",
+          "text": "License / NPI",
+          "type": "string"
+        },
+        {
+          "linkId": "amd-ed",
+          "text": "The macula is the central part of the retina used for reading and faces. Dry AMD is monitored; wet AMD needs urgent retina care. Check an Amsler grid daily with each eye covered. Call the same day for new distortion, a gray spot, or sudden central blur. AREDS2 vitamins help selected intermediate dry AMD — they are not candy for every patient. Stopping smoking is the highest-yield lifestyle change.",
+          "type": "display"
+        },
+        {
+          "linkId": "custom",
+          "text": "Your plan",
+          "type": "string"
+        },
+        {
+          "linkId": "provider-signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

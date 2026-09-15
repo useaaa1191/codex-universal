@@ -1,0 +1,99 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-amniotic-membrane-consent",
+  "version": "1.0.0",
+  "name": "amniotic_membrane_consent",
+  "title": "Amniotic Membrane Placement Consent",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "procedure"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "procedure"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "am",
+      "text": "Amniotic membrane",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "laterality",
+          "text": "Eye",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "OD"
+            },
+            {
+              "valueString": "OS"
+            }
+          ]
+        },
+        {
+          "linkId": "indication",
+          "text": "Indication",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "am-body",
+          "text": "A cryopreserved or dehydrated amniotic membrane is placed on the ocular surface to promote healing. Vision will be blurred while the ring or bandage is in place. Risks include discomfort, displacement, infection, and need for replacement. Follow-up is required.",
+          "type": "display"
+        },
+        {
+          "linkId": "am-consent",
+          "text": "I consent to amniotic membrane placement.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

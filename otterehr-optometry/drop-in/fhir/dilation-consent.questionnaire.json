@@ -1,0 +1,127 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-dilation-consent",
+  "version": "1.0.0",
+  "name": "dilation_consent",
+  "title": "Dilated Fundus Examination Consent",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "consent"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "consent-forms"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "dfe",
+      "text": "Dilation",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "dfe-body",
+          "text": "A dilated fundus examination lets the doctor view the retina, optic nerve, macula, and vitreous. Drops (typically tropicamide and/or phenylephrine) enlarge the pupil for 2–6 hours. Near vision will blur and lights will glare. You should not drive if you feel unsafe; sunglasses will be provided. Rarely, dilation can trigger an acute angle-closure attack in anatomically narrow angles (pain, nausea, rainbow halos, vision loss). Tell staff immediately if that occurs. Declining dilation limits the exam; some disease can be missed in the far periphery.",
+          "type": "display"
+        },
+        {
+          "linkId": "dfe-choice",
+          "text": "Today I choose",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "I consent to dilation"
+            },
+            {
+              "valueString": "I decline dilation and accept a limited internal exam"
+            },
+            {
+              "valueString": "Defer dilation; I will return for a dilated visit"
+            }
+          ]
+        },
+        {
+          "linkId": "driver-today",
+          "text": "Did you drive yourself today?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "signer-relationship",
+          "text": "Relationship",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Self"
+            },
+            {
+              "valueString": "Spouse"
+            },
+            {
+              "valueString": "Parent"
+            },
+            {
+              "valueString": "Legal Guardian"
+            },
+            {
+              "valueString": "Child"
+            },
+            {
+              "valueString": "Sibling"
+            },
+            {
+              "valueString": "Power of Attorney"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

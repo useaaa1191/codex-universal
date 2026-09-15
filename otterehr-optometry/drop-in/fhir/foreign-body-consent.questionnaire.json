@@ -1,0 +1,96 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-foreign-body-consent",
+  "version": "1.0.0",
+  "name": "foreign_body_consent",
+  "title": "Corneal / Conjunctival Foreign Body Removal Consent",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "procedure"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "procedure"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "fb",
+      "text": "Procedure",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "laterality",
+          "text": "Eye",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "OD"
+            },
+            {
+              "valueString": "OS"
+            },
+            {
+              "valueString": "OU"
+            }
+          ]
+        },
+        {
+          "linkId": "fb-body",
+          "text": "Removal of a foreign body from the cornea or conjunctiva uses anesthetic drops, a slit lamp, and a needle, spud, or burr. A rust ring may need a second visit. Risks include pain, infection, scarring, irregular astigmatism, incomplete removal, perforation (rare), and need for specialist care. Aftercare typically includes an antibiotic drop, pain control, and no contact lenses until the doctor clears you.",
+          "type": "display"
+        },
+        {
+          "linkId": "fb-consent",
+          "text": "I consent to foreign-body removal and rust-ring debridement if needed.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

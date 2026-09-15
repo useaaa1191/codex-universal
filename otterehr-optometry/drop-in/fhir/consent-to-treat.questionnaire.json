@@ -1,0 +1,117 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-consent-to-treat",
+  "version": "1.0.0",
+  "name": "consent_to_treat",
+  "title": "Consent to Examine, Treat & Guarantee of Payment",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "consent"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "consent-forms"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "consent",
+      "text": "Consent",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "ctt-body",
+          "text": "I consent to optometric examination and treatment by the doctors and staff of this practice. This may include refraction, binocular testing, intraocular pressure, slit-lamp examination, dilated fundus examination, retinal imaging, anterior and posterior OCT, visual fields, corneal topography, and other tests the doctor considers medically appropriate. Diagnostic drops may cause temporary light sensitivity and blurred vision. I may refuse any test. I am responsible for charges my plan does not cover, including refraction (CPT 92015) when it is a non-covered service, and I authorize a card on file to be charged for patient-responsibility balances after insurance adjudication.",
+          "type": "display"
+        },
+        {
+          "linkId": "consent-treat",
+          "text": "I consent to examination and treatment.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "consent-payment",
+          "text": "I guarantee payment of amounts I owe.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "signer-relationship",
+          "text": "Relationship to patient",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Self"
+            },
+            {
+              "valueString": "Spouse"
+            },
+            {
+              "valueString": "Parent"
+            },
+            {
+              "valueString": "Legal Guardian"
+            },
+            {
+              "valueString": "Child"
+            },
+            {
+              "valueString": "Sibling"
+            },
+            {
+              "valueString": "Power of Attorney"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

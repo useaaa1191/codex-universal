@@ -1,0 +1,73 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-telehealth-consent",
+  "version": "1.0.0",
+  "name": "telehealth_consent",
+  "title": "Telehealth Consent",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "consent"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "consent-forms"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "tele",
+      "text": "Telehealth",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "tele-body",
+          "text": "A telehealth visit cannot replace a comprehensive in-person dilated examination. Remote care is limited by camera quality, lighting, and the inability to measure pressure or view the far retinal periphery. If I have flashes, floaters with a curtain, sudden vision loss, chemical injury, or severe pain I will seek emergency in-person care. I understand state licensure rules: the doctor must be licensed where I am physically located during the visit.",
+          "type": "display"
+        },
+        {
+          "linkId": "tele-agree",
+          "text": "I consent to telehealth as described.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-ophthalmology-referral",
+  "version": "1.0.0",
+  "name": "ophthalmology_referral",
+  "title": "Referral to Ophthalmology / Retina / Cornea / Glaucoma",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "letter"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "patient-instruction"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "to",
+      "text": "To",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "specialist",
+          "text": "Specialist / clinic",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "fax",
+          "text": "Fax",
+          "type": "string"
+        },
+        {
+          "linkId": "subspecialty",
+          "text": "Service",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Comprehensive OMD"
+            },
+            {
+              "valueString": "Retina"
+            },
+            {
+              "valueString": "Cornea"
+            },
+            {
+              "valueString": "Glaucoma"
+            },
+            {
+              "valueString": "Oculoplastics"
+            },
+            {
+              "valueString": "Pediatrics / strabismus"
+            },
+            {
+              "valueString": "Neuro-oph"
+            }
+          ]
+        },
+        {
+          "linkId": "urgency",
+          "text": "Urgency",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Routine"
+            },
+            {
+              "valueString": "2–4 weeks"
+            },
+            {
+              "valueString": "This week"
+            },
+            {
+              "valueString": "Same day / emergency"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "letter",
+      "text": "Clinical",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "patient-name",
+          "text": "Patient",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "DOB",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "exam-date",
+          "text": "Exam date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "provider",
+          "text": "Provider",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "license",
+          "text": "License / NPI",
+          "type": "string"
+        },
+        {
+          "linkId": "laterality",
+          "text": "Eye",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "OD"
+            },
+            {
+              "valueString": "OS"
+            },
+            {
+              "valueString": "OU"
+            }
+          ]
+        },
+        {
+          "linkId": "reason",
+          "text": "Reason for referral",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "exam",
+          "text": "Pertinent findings / VA / IOP / OCT",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "testing-attached",
+          "text": "Testing attached",
+          "type": "string"
+        },
+        {
+          "linkId": "question",
+          "text": "Question for consultant",
+          "type": "string"
+        },
+        {
+          "linkId": "provider-signature",
+          "text": "Referring OD",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

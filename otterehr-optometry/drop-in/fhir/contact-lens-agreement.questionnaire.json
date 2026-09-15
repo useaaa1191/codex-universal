@@ -1,0 +1,127 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-contact-lens-agreement",
+  "version": "1.0.0",
+  "name": "contact_lens_agreement",
+  "title": "Contact Lens Evaluation, Fitting & Follow-up Agreement",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "consent"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "consent-forms"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "cl",
+      "text": "Contact lenses",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "cl-body",
+          "text": "Contact lenses are FDA-regulated medical devices. A contact lens evaluation is separate from a comprehensive eye exam. The fitting fee covers diagnostic lenses and scheduled follow-up visits within the stated window. A prescription is released only after the doctor finds the fit acceptable. Sleeping in lenses (unless a specifically approved extended-wear lens) greatly increases the risk of infection and scarring. Overwear, tap water, and topping off solution are unsafe. State law controls Rx expiration and copy-release.",
+          "type": "display"
+        },
+        {
+          "linkId": "cl-service",
+          "text": "Service today",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "New fit spherical"
+            },
+            {
+              "valueString": "New fit toric"
+            },
+            {
+              "valueString": "New fit multifocal"
+            },
+            {
+              "valueString": "RGP / scleral / specialty"
+            },
+            {
+              "valueString": "Annual refit same modality"
+            },
+            {
+              "valueString": "Medically necessary CL"
+            }
+          ]
+        },
+        {
+          "linkId": "cl-fee",
+          "text": "Quoted evaluation fee",
+          "type": "string"
+        },
+        {
+          "linkId": "followup-window",
+          "text": "Follow-up included through",
+          "type": "string"
+        },
+        {
+          "linkId": "no-sleep",
+          "text": "I will not sleep in lenses unless my doctor prescribes approved extended wear.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "followup-agree",
+          "text": "I will return for the required follow-up before a final Rx is released.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "hygiene",
+          "text": "I will follow wash/rinse/rub or daily-disposable instructions and never use tap water on lenses or cases.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

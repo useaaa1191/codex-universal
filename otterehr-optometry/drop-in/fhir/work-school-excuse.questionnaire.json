@@ -1,0 +1,121 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-work-school-excuse",
+  "version": "1.0.0",
+  "name": "work_school_excuse",
+  "title": "Work / School Excuse",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "letter"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "forms-list"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "excuse",
+      "text": "Excuse",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "patient-name",
+          "text": "Patient",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "DOB",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "exam-date",
+          "text": "Exam date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "provider",
+          "text": "Provider",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "license",
+          "text": "License / NPI",
+          "type": "string"
+        },
+        {
+          "linkId": "out-from",
+          "text": "Unable to attend from",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "out-to",
+          "text": "Through",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "reason",
+          "text": "Reason",
+          "type": "choice",
+          "answerOption": [
+            {
+              "valueString": "Eye examination / dilation — not safe to drive or do near work"
+            },
+            {
+              "valueString": "Ocular injury or infection"
+            },
+            {
+              "valueString": "Post-procedure"
+            },
+            {
+              "valueString": "Other (see restrictions)"
+            }
+          ],
+          "repeats": true
+        },
+        {
+          "linkId": "restrictions",
+          "text": "Restrictions",
+          "type": "string"
+        },
+        {
+          "linkId": "return-date",
+          "text": "Return date",
+          "type": "date"
+        },
+        {
+          "linkId": "provider-signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

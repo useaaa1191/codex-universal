@@ -1,0 +1,121 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-hipaa-npp",
+  "version": "1.0.0",
+  "name": "hipaa_npp",
+  "title": "HIPAA Notice of Privacy Practices Acknowledgement",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "consent"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "consent-forms"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "notice",
+      "text": "Notice of Privacy Practices",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "npp-body",
+          "text": "This practice uses and discloses protected health information for treatment, payment, and health-care operations as described in our Notice of Privacy Practices. You may request a paper copy at any time, restrict certain disclosures, request confidential communications, inspect or amend your record, and file a complaint without retaliation. We may share information with other treating providers, your insurance plan, and people you designate below.",
+          "type": "display"
+        },
+        {
+          "linkId": "last-name",
+          "text": "Last name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "first-name",
+          "text": "First name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "Date of birth",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "received-npp",
+          "text": "I acknowledge I have received or been offered a copy of the Notice of Privacy Practices.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "authorized-contacts",
+          "text": "People we may discuss my care with (name and relationship)",
+          "type": "string"
+        },
+        {
+          "linkId": "leave-detailed-message",
+          "text": "May we leave detailed clinical messages at the numbers on file?",
+          "type": "boolean"
+        },
+        {
+          "linkId": "signature",
+          "text": "Signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "signer-relationship",
+          "text": "Relationship to patient",
+          "type": "choice",
+          "required": true,
+          "answerOption": [
+            {
+              "valueString": "Self"
+            },
+            {
+              "valueString": "Spouse"
+            },
+            {
+              "valueString": "Parent"
+            },
+            {
+              "valueString": "Legal Guardian"
+            },
+            {
+              "valueString": "Child"
+            },
+            {
+              "valueString": "Sibling"
+            },
+            {
+              "valueString": "Power of Attorney"
+            },
+            {
+              "valueString": "Other"
+            }
+          ]
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

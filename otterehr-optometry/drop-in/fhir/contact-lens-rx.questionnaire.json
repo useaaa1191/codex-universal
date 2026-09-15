@@ -1,0 +1,184 @@
+{
+  "resourceType": "Questionnaire",
+  "url": "https://fhir.ottehr.com/Questionnaire/optometry-contact-lens-rx",
+  "version": "1.0.0",
+  "name": "contact_lens_rx",
+  "title": "Contact Lens Prescription",
+  "status": "active",
+  "publisher": "OtterEHR Optometry pack",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "focus"
+      },
+      "valueCodeableConcept": {
+        "text": "rx"
+      }
+    },
+    {
+      "code": {
+        "system": "https://fhir.ottehr.com/CodeSystem/ottehr-slot",
+        "code": "slot"
+      },
+      "valueCodeableConcept": {
+        "text": "forms-list"
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "clrx",
+      "text": "Contact lens Rx",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "patient-name",
+          "text": "Patient",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "dob",
+          "text": "DOB",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "exam-date",
+          "text": "Exam date",
+          "type": "date",
+          "required": true
+        },
+        {
+          "linkId": "provider",
+          "text": "Provider",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "license",
+          "text": "License / NPI",
+          "type": "string"
+        },
+        {
+          "linkId": "contact-rx",
+          "text": "Parameters",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "contact-rx.od.brand",
+              "text": "OD brand",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.bc",
+              "text": "OD bc",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.diam",
+              "text": "OD diam",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.sph",
+              "text": "OD sph",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.cyl",
+              "text": "OD cyl",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.axis",
+              "text": "OD axis",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.od.add",
+              "text": "OD add",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.brand",
+              "text": "OS brand",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.bc",
+              "text": "OS bc",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.diam",
+              "text": "OS diam",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.sph",
+              "text": "OS sph",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.cyl",
+              "text": "OS cyl",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.axis",
+              "text": "OS axis",
+              "type": "string"
+            },
+            {
+              "linkId": "contact-rx.os.add",
+              "text": "OS add",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "linkId": "replacement",
+          "text": "Replacement schedule",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "quantity",
+          "text": "Quantity authorized",
+          "type": "string"
+        },
+        {
+          "linkId": "expiration",
+          "text": "Expiration date",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "care",
+          "text": "Care system / notes",
+          "type": "string"
+        },
+        {
+          "linkId": "copy-given",
+          "text": "Patient received a copy of this prescription.",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "linkId": "provider-signature",
+          "text": "Provider signature",
+          "type": "string",
+          "required": true
+        },
+        {
+          "linkId": "sign-date",
+          "text": "Date",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ]
+}
