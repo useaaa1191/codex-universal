@@ -1,1 +1,25 @@
 .DS_Store
+
+# Secrets and local env (never commit)
+.env
+.env.*
+!.env.example
+!**/.env.example
+*.pem
+*.p12
+*.pfx
+*.key
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+credentials.json
+service-account*.json
+**/secrets.yaml
+**/secrets.yml
+.secrets/
+*.secret
+
+# Local tooling / scan artifacts
+.gitleaks-report.json
+gitleaks-report.*
