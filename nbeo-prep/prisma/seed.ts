@@ -210,31 +210,27 @@ async function main() {
   const admin = await prisma.user.upsert({
     where: { email: "admin@optiprep.app" },
     update: { passwordHash: adminHash, role: "ADMIN" },
-    create: {
-      email: "admin@optiprep.app",
-      name: "Admin",
-      role: "ADMIN",
-      passwordHash: adminHash,
-      subscription: { create: { plan: "FULL_BUNDLE", status: "ACTIVE" } },
-    },
+    create: { email: "admin@optiprep.app", name: "Admin", role: "ADMIN", passwordHash: adminHash },
   });
 
   const student = await prisma.user.upsert({
     where: { email: "demo@optiprep.app" },
-    update: { passwordHash: studentHash },
-    create: {
-      email: "demo@optiprep.app",
-      name: "Demo Student",
-      role: "STUDENT",
-      passwordHash: studentHash,
-      subscription: {
-        create: {
-          plan: "FULL_BUNDLE",
-          status: "ACTIVE",
-          currentPeriodEnd: new Date(Date.now() + 1000 * 60 * 60 * 24 * 90),
-        },
-      },
-    },
+    update: { passwordHash: studentHash, role: "STUDENT" },
+    create: { email: "demo@optiprep.app", name: "Demo Student", role: "STUDENT", passwordHash: studentHash },
+  });
+
+  // Subscriptions are cleared on each seed, so upsert them explicitly by userId
+  // (nested create on user.upsert would be skipped when the user already exists).
+  const periodEnd = new Date(Date.now() + 1000 * 60 * 60 * 24 * 90);
+  await prisma.subscription.upsert({
+    where: { userId: admin.id },
+    update: { plan: "FULL_BUNDLE", status: "ACTIVE", currentPeriodEnd: periodEnd },
+    create: { userId: admin.id, plan: "FULL_BUNDLE", status: "ACTIVE", currentPeriodEnd: periodEnd },
+  });
+  await prisma.subscription.upsert({
+    where: { userId: student.id },
+    update: { plan: "FULL_BUNDLE", status: "ACTIVE", currentPeriodEnd: periodEnd },
+    create: { userId: student.id, plan: "FULL_BUNDLE", status: "ACTIVE", currentPeriodEnd: periodEnd },
   });
   console.log(`  ✓ users: ${admin.email} (admin), ${student.email} (student)`);
 
